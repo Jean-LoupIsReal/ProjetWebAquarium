@@ -1,0 +1,112 @@
+/*   CSS GENERAL */
+:root{
+    --bleupale: #00A1FF;
+    --grisfonce: #333333;
+}
+
+body{
+    background-image:linear-gradient(#00A1F1, #001133)
+}
+.light-gradient
+{
+    background-image:linear-gradient(#00B3FA, #CCFAFF)
+}
+
+
+/*   CSS HEADER   */
+
+.nav-menu{
+    display:flex;
+    flex-direction: row;
+    background-color:var(--bleupale);
+    padding-top:10px;
+    padding-bottom:10px;
+    margin:0;
+    justify-content:space-between;
+}
+
+.logo-titre{
+    display:flex;
+    flex-direction:row;
+    justify-content: start;
+    align-items:center;
+}
+.logo-titre img{
+    width:100px;
+    height:100px;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.page-menu{
+    display:flex;
+    flex-direction:row;
+    justify-content: end;
+    align-items:center;
+    gap:5%;
+    padding-right:2%;
+}
+.page-menu img{
+    width:50px;
+    height:50px;
+}
+
+
+/*   CSS FOOTER   */
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height:5%;
+    color:white;
+    background-color:var(--grisfonce);
+    text-align:center;
+}
+
+
+/*   CSS INDEX    */
+
+
+
+/*   CSS INSCRIPTIONS   */
+
+
+
+/*   CSS CONNEXION   */
+
+
+
+/*   CSS INVENTAIRE   */
+
+
+
+/*   CSS POISSONPARTPICKER   */
+
+
+
+/*   CSS PANIER   */
+
+
+
+/*   CSS RESPONSIVE   */
+
+@media only screen and (max-width: 850px) {
+
+    body{
+        background-color:red;
+    }
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
