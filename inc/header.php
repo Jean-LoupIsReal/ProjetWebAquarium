@@ -8,16 +8,16 @@
 </head>
 <body class="page">
 
-    <nav class="nav-menu col-12">
-        <div class="logo-titre col-6">
-            <img class="logo" src="img/placeholder.png">
-            <h1>Poisson Part Picker</h1>
+    <nav class="nav-menu">
+        <div class="logo-titre">
+            <a href="index.php"><img class="logo" src="img/placeholder.png"></a>
+            <h1><a href="index.php">Poisson Part Picker</a></h1>
         </div>
-        <div class="page-menu col-6">
+        <div class="page-menu">
             <h2>ACCUEIL</h2>
             <h2>INVENTAIRE</h2>
             <h2>PART PICKER</h2>
-            <img class="panier" src="img/basket.png">
+            <a href="panier.php"><img class="panier" src="img/basket.png"></a>
         </div>
     </nav>
 

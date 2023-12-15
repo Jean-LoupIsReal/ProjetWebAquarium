@@ -5,7 +5,9 @@
 }
 
 body{
-    background-image:linear-gradient(#00A1F1, #001133)
+    background-image:linear-gradient(#00A1F1, #001133);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .light-gradient
 {
@@ -16,26 +18,32 @@ body{
 /*   CSS HEADER   */
 
 .nav-menu{
-    display:flex;
-    flex-direction: row;
+    display:grid;
+    grid-template-columns:repeat(10, 10%) ;
+    grid-template-areas: "logo logo logo logo logo menu menu menu menu menu";
     background-color:var(--bleupale);
+    width:100%;
     padding-top:10px;
     padding-bottom:10px;
-    margin:0;
-    justify-content:space-between;
+}
+.nav-menu a{
+    color:#000000;
+    text-decoration:none;
 }
 
 .logo-titre{
     display:flex;
     flex-direction:row;
-    justify-content: start;
+    justify-content:start;
     align-items:center;
+    gap:20px;
+    grid-area:logo;
 }
-.logo-titre img{
+.logo{
     width:100px;
     height:100px;
-    margin-left:2%;
-    margin-right:2%;
+    margin-left:30px;
+    margin-right:30px;
 }
 
 .page-menu{
@@ -45,12 +53,12 @@ body{
     align-items:center;
     gap:5%;
     padding-right:2%;
+    grid-area:menu;
 }
 .page-menu img{
     width:50px;
     height:50px;
 }
-
 
 /*   CSS FOOTER   */
 
@@ -91,10 +99,24 @@ footer{
 
 /*   CSS RESPONSIVE   */
 
+@media only screen and (max-width: 1350px)
+{
+    .logo-titre h1{
+        display:none;
+    }
+}
+
 @media only screen and (max-width: 850px) {
 
-    body{
-        background-color:red;
+    .nav-menu
+    {
+        display:block;
+    }
+    .logo-titre{
+        margin:auto;
+    }
+    .page-menu{
+        display:none;
     }
 }
 
