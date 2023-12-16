@@ -1,5 +1,7 @@
 </main>
 
-<footer class="col-12">Charles-Antoine Lavoie  -  Jean-Loup Dandurand-Pominville</footer>
+<footer class="col-12">
+    <p>Charles-Antoine Lavoie  -  Jean-Loup Dandurand-Pominville</p>
+</footer>
 
 </body>
