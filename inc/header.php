@@ -4,9 +4,11 @@ if (session_status() === PHP_SESSION_NONE) {
 } 
 
 include_once("classe/PDOFactory.php");
+include_once("manager/item_manager.php");
 
 $bdd = PDOFactory::getMySQLConnection();
 
+$itemManager = new item_manager($bdd);
 ?>
 
 <!DOCTYPE html>

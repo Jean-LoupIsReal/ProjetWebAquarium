@@ -8,8 +8,20 @@ class Item
     private string $_compagnie;
     private int $_rangeGallons;
     private float $_prix;
-    private string $_imgUrl;
+    private string $_img;
 
+    public function __construct($param = array())
+    {
+        // Pour chaques parametres dans le array
+        foreach($param as $k => $v){
+            // Crée le nom de la méthode avec le set_ et ensuite avec le nom du parametre
+            $methodName = "set_". $k;
+            // S'assure que la méthode existe pour pas faire crash le site
+            if(method_exists($this, $methodName))
+                $this->$methodName($v); // Insère la valeur dans la méthode
+        }
+    }
+    
     /**
      * Get the value of _id
      */ 
