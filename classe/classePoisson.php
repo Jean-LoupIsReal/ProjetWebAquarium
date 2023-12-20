@@ -28,8 +28,8 @@ class Poisson{
     }
 
     // Setter pour id
-    public function set_id($_id) {
-        $this->_id = $_id;
+    public function set_id($id) {
+        $this->_id = $id;
     }
 
     // Getter pour _nom
@@ -38,8 +38,8 @@ class Poisson{
     }
     
     // Setter pour _nom
-    public function set_nom($_nom) {
-        $this->_nom = $_nom;
+    public function set_nom($nom) {
+        $this->_nom = $nom;
     }
 
     // Getter pour _famille
@@ -48,8 +48,8 @@ class Poisson{
     }
 
     // Setter pour _famille
-    public function set_famille($_famille) {
-        $this->_famille = $_famille;
+    public function set_famille($famille) {
+        $this->_famille = $famille;
     }
 
     // Getter pour _tropical
@@ -58,58 +58,58 @@ class Poisson{
     }
 
     // Setter pour _tropical
-    public function set_tropical($_tropical) {
-        $this->_tropical = $_tropical;
+    public function set_tropical($tropical) {
+        $this->_tropical = $tropical;
     }
 
     // Getter pour _description
-    public function get_Description() {
+    public function get_description() {
         return $this->_description;
     }
 
     // Setter pour _description
-    public function set_Description($_description) {
-        $this->_description = $_description;
+    public function set_description($description) {
+        $this->_description = $description;
     }
 
     // Getter pour _no_taille
-    public function get_NoTaille() {
+    public function get_no_taille() {
         return $this->_no_taille;
     }
 
     // Setter pour _no_taille
-    public function set_NoTaille($_no_taille) {
-        $this->_no_taille = $_no_taille;
+    public function set_no_taille($no_taille) {
+        $this->_no_taille = $no_taille;
     }
 
     // Getter pour _gallon_minimum
-    public function get_GallonMinimum() {
-        return $this->_gallon_minimum;
+    public function get_gallons_minimum() {
+        return $this->_gallons_minimum;
     }
 
     // Setter pour _gallon_minimum
-    public function set_GallonMinimum($_gallon_minimum) {
-        $this->_gallon_minimum = $_gallon_minimum;
+    public function set_gallons_minimum($gallons_minimum) {
+        $this->_gallons_minimum = $gallons_minimum;
     }
 
     // Getter pour _prix
-    public function get_Prix() {
+    public function get_prix() {
         return $this->_prix;
     }
 
     // Setter pour _prix
-    public function set_Prix($_prix) {
-        $this->_prix = $_prix;
+    public function set_prix($prix) {
+        $this->_prix = $prix;
     }
 
     // Getter pour _img
-    public function get_Img() {
+    public function get_img() {
         return $this->_img;
     }
 
     //Setter pour _img
-    public function set_Img($_img) {
-        $this->_img = $_img;
+    public function set_img($img) {
+        $this->_img = $img;
     }
 }
 ?>

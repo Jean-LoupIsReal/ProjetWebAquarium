@@ -1,4 +1,6 @@
-<?php include_once("inc/header.php");
+<?php 
+include_once("inc/header.php");
+
 ?>
 
 <!-- affiche les éléments selon le filtre du poisson part picker -->
@@ -13,6 +15,7 @@ if(!isset($_REQUEST["categorie"])){
         echo    '<p>'. $cat .'</p>';
         echo '</a>';
     }
+    
 }
 
 elseif($_REQUEST["categorie"] == "poisson")
@@ -23,13 +26,15 @@ elseif($_REQUEST["categorie"] == "poisson")
     {
         echo '<img src="img/poisson.jpg" alt="">';
     }
-
 }
+
 elseif($_REQUEST["categorie"] == "aquarium")
 {
 
 }
-else{
+
+else
+{
     
 }
 
