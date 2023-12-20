@@ -24,7 +24,7 @@ elseif($_REQUEST["categorie"] == "poisson")
     //affiche les poissons
     foreach($poissons as $poisson)
     {
-        echo '<img src="img/poisson.jpg" alt="">';
+        echo $poisson->get_no(). " ".$poisson->get_nom() . " ". $poisson->get_no()." ". $poisson->get_no(). " ";
     }
 }
 

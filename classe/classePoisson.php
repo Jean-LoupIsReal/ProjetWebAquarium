@@ -1,6 +1,6 @@
 <?php
 class Poisson{
-    private int $_id;
+    private int $_no;
     private string $_nom;
     private string $_famille;
     private bool $_tropical;
@@ -23,13 +23,13 @@ class Poisson{
     }
 
     // Getter pour id
-    public function get_id() {
-        return $this->_id;
+    public function get_no() {
+        return $this->_no;
     }
 
     // Setter pour id
-    public function set_id($id) {
-        $this->_id = $id;
+    public function set_no($no) {
+        $this->_no = $no;
     }
 
     // Getter pour _nom

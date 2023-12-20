@@ -31,7 +31,7 @@ class item_manager
         return $poissonsArray;
     }
 
-    private function getAquariums() : array{
+    public function getAquariums() : array{
         $aquariumArray = array();
         $aquariums = $this->_bdd->query(self::SELECT_ALL_AQUARIUMS)->fetchALL();
         foreach($aquariums as $poisson){
@@ -40,7 +40,7 @@ class item_manager
         return $aquariumsArray;
     }
 
-    private function get() : array{
+    public function get() : array{
         //$itemsArray = array();
         //$items = $this->_bdd->(self::SELECT_ALL_ITEMS)->fetchALL();
         foreach($items as $item){
