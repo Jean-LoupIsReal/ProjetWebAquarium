@@ -1,5 +1,4 @@
 <!-- selectionne les éléments à acheter -->
-
 <article class="section-principale">
     <aside class="boutons-fonctions">
 

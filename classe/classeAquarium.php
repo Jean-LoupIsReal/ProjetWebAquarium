@@ -2,51 +2,32 @@
 
 class Aquarium
 {
-    private int $_id;
-    private string $_compagnie;
+    private int $_no ;
+    private string $_no_compagnie;
     private string $_type;
-    private int $_dimensionsX;
-    private int $_dimensionsY;
-    private int $_dimensionsZ;
+    private string $_dimensions;
     private int $_gallons;
     private float $_prix;
-    private string $_imgUrl; 
+    private string $_img; 
 
-
-    public function __serialize()
+    public function __construct($param = array())
     {
-        return [
-            "id" => $this->get_id(),
-            "compagnie" => $this->get_compagnie(),
-            "type" => $this->get_type(),
-            "dimensionsX" => $this->get_dimensionsX(),
-            "dimensionsY" => $this->get_dimensionsY(),
-            "dimensionsZ" => $this->get_dimensionsZ(),
-            "gallons" => $this->get_gallons(),
-            "prix" => $this->get_prix(),
-            "imgUrl" => $this->get_imgUrl()
-        ];
-    }
-
-    public function __unserialize(array $data)
-    {
-        $this->set_id($data["id"]);
-        $this->set_compagnie($data["compagnie"]);
-        $this->set_type($data["type"]);
-        $this->set_dimensionsX($data["deimensionsX"]);
-        $this->set_dimensionsY($data["dimensionsY"]);
-        $this->set_dimensionsZ($data["dimensionZ"]);
-        $this->set_gallons($data["gallons"]);
-        $this->set_prix($data["prix"]);
-        $this->set_imgUrl($data["imgUrl"]);
+        // Pour chaques parametres dans le array
+        foreach($param as $k => $v){
+            // Crée le nom de la méthode avec le set_ et ensuite avec le nom du parametre
+            $methodName = "set_". $k;
+            // S'assure que la méthode existe pour pas faire crash le site
+            if(method_exists($this, $methodName))
+                $this->$methodName($v); // Insère la valeur dans la méthode
+        }
     }
 
     /**
      * Get the value of _id
      */ 
-    public function get_id()
+    public function get_no()
     {
-        return $this->_id;
+        return $this->_no;
     }
 
     /**
@@ -54,19 +35,18 @@ class Aquarium
      *
      * @return  self
      */ 
-    public function set_id($_id)
+    public function set_no($_id)
     {
-        $this->_id = $_id;
+        $this->_no = $_id;
 
-        return $this;
     }
 
     /**
      * Get the value of _compagnie
      */ 
-    public function get_compagnie()
+    public function get_no_compagnie()
     {
-        return $this->_compagnie;
+        return $this->_no_compagnie;
     }
 
     /**
@@ -74,11 +54,9 @@ class Aquarium
      *
      * @return  self
      */ 
-    public function set_compagnie($_compagnie)
+    public function set_no_compagnie($compagnie)
     {
-        $this->_compagnie = $_compagnie;
-
-        return $this;
+        $this->_no_compagnie = $compagnie;
     }
 
     /**
@@ -94,19 +72,17 @@ class Aquarium
      *
      * @return  self
      */ 
-    public function set_type($_type)
+    public function set_type($type)
     {
-        $this->_type = $_type;
-
-        return $this;
+        $this->_type = $type;
     }
 
     /**
      * Get the value of _dimensionsX
      */ 
-    public function get_dimensionsX()
+    public function get_dimensions()
     {
-        return $this->_dimensionsX;
+        return $this->_dimensions;
     }
 
     /**
@@ -114,51 +90,9 @@ class Aquarium
      *
      * @return  self
      */ 
-    public function set_dimensionsX($_dimensionsX)
+    public function set_dimensions($dimensions)
     {
-        $this->_dimensionsX = $_dimensionsX;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of _dimensionsY
-     */ 
-    public function get_dimensionsY()
-    {
-        return $this->_dimensionsY;
-    }
-
-    /**
-     * Set the value of _dimensionsY
-     *
-     * @return  self
-     */ 
-    public function set_dimensionsY($_dimensionsY)
-    {
-        $this->_dimensionsY = $_dimensionsY;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of _dimensionsZ
-     */ 
-    public function get_dimensionsZ()
-    {
-        return $this->_dimensionsZ;
-    }
-
-    /**
-     * Set the value of _dimensionsZ
-     *
-     * @return  self
-     */ 
-    public function set_dimensionsZ($_dimensionsZ)
-    {
-        $this->_dimensionsZ = $_dimensionsZ;
-
-        return $this;
+        $this->_dimensions = $dimensions;
     }
 
     /**
@@ -177,8 +111,6 @@ class Aquarium
     public function set_gallons($_gallons)
     {
         $this->_gallons = $_gallons;
-
-        return $this;
     }
 
     /**
@@ -194,19 +126,17 @@ class Aquarium
      *
      * @return  self
      */ 
-    public function set_prix($_prix)
+    public function set_prix($prix)
     {
-        $this->_prix = $_prix;
-
-        return $this;
+        $this->_prix = $prix;
     }
 
     /**
      * Get the value of _imgUrl
      */ 
-    public function get_imgUrl()
+    public function get_img()
     {
-        return $this->_imgUrl;
+        return $this->_img;
     }
 
     /**
@@ -214,11 +144,9 @@ class Aquarium
      *
      * @return  self
      */ 
-    public function set_imgUrl($_imgUrl)
+    public function set_img($imgUrl)
     {
-        $this->_imgUrl = $_imgUrl;
-
-        return $this;
+        $this->_img = $imgUrl;
     }
 }
 

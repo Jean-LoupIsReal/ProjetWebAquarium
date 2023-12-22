@@ -2,22 +2,33 @@
 
 class Utilisateur
 {
-    private int $_id;
+    private int $_no;
     private string $_nom;
     private string $_mdp;
     private string $_email;
     private string $_addresse;
     private string $_ville;
     private string $_pays;
-    private string $_codePanier;
+    private string $_code_panier;
 
 
+    public function __construct($param = array())
+    {
+        // Pour chaques parametres dans le array
+        foreach($param as $k => $v){
+            // Crée le nom de la méthode avec le set_ et ensuite avec le nom du parametre
+            $methodName = "set_". $k;
+            // S'assure que la méthode existe pour pas faire crash le site
+            if(method_exists($this, $methodName))
+                $this->$methodName($v); // Insère la valeur dans la méthode
+        }
+    }
     /**
      * Get the value of _id
      */ 
-    public function get_id()
+    public function get_no()
     {
-        return $this->_id;
+        return $this->_no;
     }
 
     /**
@@ -105,9 +116,9 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function set_addresse($_addresse)
+    public function set_addresse($addresse)
     {
-        $this->_addresse = $_addresse;
+        $this->_addresse = $addresse;
 
         return $this;
     }
@@ -125,9 +136,9 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function set_ville($_ville)
+    public function set_ville($ville)
     {
-        $this->_ville = $_ville;
+        $this->_ville = $ville;
 
         return $this;
     }
@@ -145,9 +156,9 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function set_pays($_pays)
+    public function set_pays($pays)
     {
-        $this->_pays = $_pays;
+        $this->_pays = $pays;
 
         return $this;
     }
@@ -155,9 +166,9 @@ class Utilisateur
     /**
      * Get the value of _codePanier
      */ 
-    public function get_codePanier()
+    public function get_code_panier()
     {
-        return $this->_codePanier;
+        return $this->_code_panier;
     }
 
     /**
@@ -165,9 +176,9 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function set_codePanier($_codePanier)
+    public function set_code_panier($code_panier)
     {
-        $this->_codePanier = $_codePanier;
+        $this->_code_panier = $code_panier;
 
         return $this;
     }
