@@ -2,9 +2,8 @@
 include_once("inc/header.php");
 ?>
 
-<h1>Votre Panier</h1>
+<h1 class="titre-panier"><u>Votre Panier</u></h1>
 <article class="panier-paiement"> 
-    <hr>
     <section class="panier">
         <?php
             $contenu = $_COOKIE["panierAquarium"];
@@ -17,7 +16,7 @@ include_once("inc/header.php");
             {
                 $sousTotal += $objet
                 ?>
-                <div>
+                <div class="entry">
                     <img src=<?php  ?> class="image-objet">
                     <h2><?php  ?></h2>
                     <p><?php  ?></p>

@@ -24,7 +24,7 @@ class Utilisateur
         }
     }
     /**
-     * Get the value of _id
+     * Get the value of _no
      */ 
     public function get_no()
     {
@@ -32,13 +32,13 @@ class Utilisateur
     }
 
     /**
-     * Set the value of _id
+     * Set the value of _no
      *
      * @return  self
      */ 
-    public function set_id($_id)
+    public function set_no($_no)
     {
-        $this->_id = $_id;
+        $this->_no = $_no;
 
         return $this;
     }
