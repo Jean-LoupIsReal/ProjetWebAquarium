@@ -1,7 +1,4 @@
-<?php 
-include_once("inc/header.php");
-
-?>
+<?php include_once("inc/pretraitement.php") ?>
 
 <!-- affiche les éléments selon le filtre du poisson part picker -->
 <div class="inventaire">
@@ -10,7 +7,9 @@ include_once("inc/header.php");
         $categories = ["Poisson", "Aquarium", "Chauffe-eau", "Substrait", "Décoration", "Filtre", "Lumière", "Thermomètre", "Nettoyage" ];
         foreach($categories as $cat)
         {   
-            echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="categ">';
+
+            echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="categ col-3 col-11m">';
+
             echo    '<img src="img/'. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '.jpg" alt="">';
             echo    '<p>'. $cat .'</p>';
             echo '</a>';
@@ -24,7 +23,9 @@ include_once("inc/header.php");
         //affiche les poissons
         foreach($poissons as $poisson)
         {
+
             $poisson->affiche("ajouter");
+
         }
     }
 
@@ -34,7 +35,9 @@ include_once("inc/header.php");
         //affiche les aquariums
         foreach($aquariums as $aquarium)
         {
+
             $aquarium->affiche("ajouter");
+
         }
     }
 
@@ -46,7 +49,6 @@ include_once("inc/header.php");
         {
             $item->affiche("ajouter");
         }
-        
     }
 
     ?>

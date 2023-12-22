@@ -21,6 +21,7 @@ class Poisson{
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
+
     public function affiche($mode){
         echo "<div class='affichage'>";
             echo "<img src='img/poisson.jpg' alt='poisson'></img>"; //si temps ajouter img précise avec $poisson->get_img()
@@ -33,6 +34,8 @@ class Poisson{
             {
                 echo "<button onclick='supprimerObjet()'>Supprimer</button>";
             }
+
+      
         echo "</div>";
     }
 
