@@ -24,7 +24,7 @@ class item_manager
                                     INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no
                                     WHERE `no` = :_no";
     
-    const SELECT_ITEM_BY_ID = "SELECT *  FROM item_autre 
+    const SELECT_ITEM_BY_ID = "SELECT item_autre.*, type_item.type, compagnie.compagnie  FROM item_autre 
                                INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
                                INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
                                WHERE `no` = :_no";

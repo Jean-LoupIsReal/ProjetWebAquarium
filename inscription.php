@@ -3,7 +3,7 @@
 <div class="inscription">
     <h1>Création de votre compte</h1>
 
-    <form action="traitement.php" method="post" class="insc">
+    <form action="traitement.php" method="post" value="con">
         <!-- Entrée de nom -->
         <label for="nom" class='col-3 col-12m'>Nom d'utilisateur :</label>
         <input type="text" name="nom" id="nom"class='col-7 col-11m' required>
@@ -24,14 +24,14 @@
         <select name="pays" id="pays" class='col-7 col-11m'>
             <?php 
                 $pays = $utilisateur_manager->getPays();
-                
                 foreach( $pays as $nom)
                 {
                         echo "<option value='" . $nom[0] . "'>" . $nom[1] . "</option>";
                 }
             ?>
         </select>
-        <button type='submit' class='col-10 col-10m'>Créer le compte</button>
+        <input type="hidden" name="insc">
+        <button type='submit' class='col-10 col-10m' >Créer le compte</button>
     </form>
  </div>
 <?php include_once("inc/footer.php") ?>

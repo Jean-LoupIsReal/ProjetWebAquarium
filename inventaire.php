@@ -1,7 +1,4 @@
-<?php 
-include_once("inc/header.php");
-
-?>
+<?php include_once("inc/pretraitement.php") ?>
 
 <!-- affiche les éléments selon le filtre du poisson part picker -->
 <div class="inventaire">

@@ -10,10 +10,7 @@ class Utilisateur
     private string $_ville;
     private string $_pays;
     private string $_code_panier;
-
-    const CONNECTION_UTILISATEUR = "SELECT utilisateur.nom_utilisateur, utilisateur.email, utilisateur.adresse, utilisateur.ville, utilisateur.code_panier, pays.nom  FROM utilisateur
-                                    INNER JOIN pays ON utilisateur.no_pays = pays.no 
-                                    WHERE nom_utilisateur = :nom_utilisateur AND mdp = :mdp";
+    
 
     public function __construct($param = array())
     {
@@ -25,7 +22,9 @@ class Utilisateur
             if(method_exists($this, $methodName))
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
+        
     }
+
     /**
      * Get the value of _id
      */ 
