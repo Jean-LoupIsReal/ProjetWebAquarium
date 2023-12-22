@@ -42,7 +42,7 @@ function ajouterAquarium(value)
 {
   let panierArray = new Array;
 
-  if(getCookie("panier") != "")
+  if(getCookie("panierAquarium") != "")
   {
     let panierCookie = getCookie("panierAquarium");
     panierArray = JSON.parse(panierCookie);
@@ -59,7 +59,7 @@ function ajouterPoisson()
 {
   let panierArray = new Array;
 
-  if(getCookie("panier") != "")
+  if(getCookie("panierPoisson") != "")
   {
     let panierCookie = getCookie("panierPoisson");
     panierArray = JSON.parse(panierCookie);
@@ -76,7 +76,7 @@ function ajouterItem()
 {
   let panierArray = new Array;
 
-  if(getCookie("panier") != "")
+  if(getCookie("panierItem") != "")
   {
     let panierCookie = getCookie("panierItem");
     panierArray = JSON.parse(panierCookie);
