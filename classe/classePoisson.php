@@ -7,7 +7,7 @@ class Poisson{
     private string $_description;
     private int $_no_taille;
     private int $_gallon_minimum;
-    private int $_prix;
+    private float $_prix;
     private string $_img;
 
     public function __construct($param = array())

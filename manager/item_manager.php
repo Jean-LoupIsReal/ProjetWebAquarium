@@ -9,9 +9,14 @@ class item_manager
 
     const SELECT_ALL_POISSONS = "SELECT * FROM `poisson`";
 
-    const SELECT_ALL_AQUARIUMS = "SELECT * FROM aquarium";
+    const SELECT_ALL_AQUARIUMS = "SELECT * FROM aquarium 
+                                  INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
-    const SELECT_ALL_ITEMS = "SELECT * FROM item_autre INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.id WHERE no_type_item = (SELECT ";
+    const SELECT_ALL_ITEMS = "SELECT *  FROM item_autre 
+                              INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
+                              INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
+                              WHERE no_type_item = 
+                              (SELECT `no` FROM type_item WHERE :type_item LIKE type_item.type)";
 
     public function __construct($db) { $this->set_db($db); }
 
@@ -24,7 +29,6 @@ class item_manager
     public function getPoissons() : array{
         $poissonsArray = array();
         $poissons = $this->_db->query(self::SELECT_ALL_POISSONS)->fetchALL();
-        echo "<p>hello<p>";
         foreach($poissons as $poisson){
             array_push($poissonsArray, new Poisson($poisson));
         }
@@ -32,21 +36,26 @@ class item_manager
     }
 
     public function getAquariums() : array{
-        $aquariumArray = array();
-        $aquariums = $this->_bdd->query(self::SELECT_ALL_AQUARIUMS)->fetchALL();
-        foreach($aquariums as $poisson){
-            array_push($aquariumsArray, new Poisson($aquarium));
+        $aquariumsArray = array();
+        $aquariums = $this->_db->query(self::SELECT_ALL_AQUARIUMS)->fetchALL();
+        assert(!empty($aquariums), 'Les items n\'ont pas été trouvé(s) dans la base de données.');
+        foreach($aquariums as $aquarium){
+            array_push($aquariumsArray, new Aquarium($aquarium));
         }
         return $aquariumsArray;
     }
 
-    public function get() : array{
-        //$itemsArray = array();
-        //$items = $this->_bdd->(self::SELECT_ALL_ITEMS)->fetchALL();
+    public function getItems($type_item) : array{
+        $itemsArray = array();
+        $query = $this->_db->prepare(self::SELECT_ALL_ITEMS);
+        $query->execute(array("type_item" => $type_item));
+        $items = $query->fetchall();
+      
+        assert(!empty($items), 'Les items n\'ont pas été trouvé(s) dans la base de données.');
         foreach($items as $item){
-            array_push($aquariumsArray, new Poisson($item));
+            array_push($itemsArray, new Item($item));
         }
-        return $aquariumsArray;
+        return $itemsArray;
     }
 
 

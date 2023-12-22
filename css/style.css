@@ -99,8 +99,54 @@ footer{
 
 
 /*   CSS INVENTAIRE   */
+.inventaire{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.inventaire > a, .inventaire > div{
+    width: 27%;
+    margin: 3%;
+    background-color: rgba(173, 216, 230, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius:5%;
+    color: #001133;
+}
+.inventaire > a > img, .inventaire > div > img {
+    padding-top: 45px;
+    width: 80%;
+}
 
+.inventaire > a > p{
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.inventaire > div > p{
+    width: 100%;
+    text-align: center;
+    margin: 2px;
+    font-weight: bold;
+}
+
+.inventaire > div > p:nth-child(2){
+    margin-top: 20px;
+}
+
+.inventaire button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 15px 100px;
+    background-color: orange;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
 
 /*   CSS POISSONPARTPICKER   */
 
