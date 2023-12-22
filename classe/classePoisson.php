@@ -21,6 +21,13 @@ class Poisson{
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
+    public function affiche(){
+        echo "<div>";
+            echo "<img src='img/poisson.jpg' alt='poisson'></img>"; //si temps ajouter img précise avec $poisson->get_img()
+            echo  "<p>". $this->_nom . "</p><p>".  $this->_description. "</p><p>".  $this->_prix. "$". "</p>";
+            echo "<button onclick='ajouterPoissonPanier()' class='".  $this->_no . "'>Ajouter au panier</button>";
+        echo "</div>";
+    }
 
     // Getter pour id
     public function get_no() {

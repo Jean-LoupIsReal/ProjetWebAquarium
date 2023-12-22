@@ -22,6 +22,14 @@ class Aquarium
         }
     }
     
+    public function affiche(){
+        echo "<div>";
+            echo "<img src='img/aquariums/". $this->get_img(). "' alt='". $this->get_img(). "'></img>"; //si temps ajouter img précise avec $poisson->get_img()
+            echo "<p>Aquarium ". $this->get_type(). " ". $this->get_gallons(). "</p><p>". $this->get_dimensions(). "</p><p>". $this->get_prix(). "$". "</p>";
+            echo "<button onclick='ajouterAquariumPanier()'class='" . $this->get_no(). "'>Ajouter au panier</button>";
+        echo "</div>";
+    }
+
     /**
      * Get the value of _id
      */ 
