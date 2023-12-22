@@ -2,20 +2,32 @@
 
 class Item
 {
-    private int $_id;
+    private int $_no;
     private string $_nom;
     private string $_type;
     private string $_compagnie;
-    private int $_rangeGallons;
+    private int $_no_range_gallons;
     private float $_prix;
-    private string $_imgUrl;
+    private string $_img;
 
+    public function __construct($param = array())
+    {
+        // Pour chaques parametres dans le array
+        foreach($param as $k => $v){
+            // Crée le nom de la méthode avec le set_ et ensuite avec le nom du parametre
+            $methodName = "set_". $k;
+            // S'assure que la méthode existe pour pas faire crash le site
+            if(method_exists($this, $methodName))
+                $this->$methodName($v); // Insère la valeur dans la méthode
+        }
+    }
+    
     /**
      * Get the value of _id
      */ 
-    public function get_id()
+    public function get_no()
     {
-        return $this->_id;
+        return $this->_no;
     }
 
     /**
@@ -23,9 +35,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_id($_id)
+    public function set_no($_id)
     {
-        $this->_id = $_id;
+        $this->_no = $_id;
 
         return $this;
     }
@@ -43,9 +55,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_nom($_nom)
+    public function set_nom($nom)
     {
-        $this->_nom = $_nom;
+        $this->_nom = $nom;
 
         return $this;
     }
@@ -63,9 +75,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_type($_type)
+    public function set_type($type)
     {
-        $this->_type = $_type;
+        $this->_type = $type;
 
         return $this;
     }
@@ -83,9 +95,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_compagnie($_compagnie)
+    public function set_compagnie($compagnie)
     {
-        $this->_compagnie = $_compagnie;
+        $this->_compagnie = $compagnie;
 
         return $this;
     }
@@ -93,9 +105,9 @@ class Item
     /**
      * Get the value of _rangeGallons
      */ 
-    public function get_rangeGallons()
+    public function get_no_range_gallons()
     {
-        return $this->_rangeGallons;
+        return $this->_range_gallons;
     }
 
     /**
@@ -103,9 +115,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_rangeGallons($_rangeGallons)
+    public function set_no_range_gallons($range_gallon)
     {
-        $this->_rangeGallons = $_rangeGallons;
+        $this->_range_gallons = $range_gallon;
 
         return $this;
     }
@@ -133,9 +145,9 @@ class Item
     /**
      * Get the value of _imgUrl
      */ 
-    public function get_imgUrl()
+    public function get_img()
     {
-        return $this->_imgUrl;
+        return $this->_img;
     }
 
     /**
@@ -143,9 +155,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_imgUrl($_imgUrl)
+    public function set_imgUrl($_img)
     {
-        $this->_imgUrl = $_imgUrl;
+        $this->_imgUrl = $_img;
 
         return $this;
     }
