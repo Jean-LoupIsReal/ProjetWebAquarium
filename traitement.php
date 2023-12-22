@@ -1,4 +1,13 @@
-<?php include_once("inc/pretraitement.php")
+<?php include_once("inc/pretraitement.php");
+
+
+    if(isset($_REQUEST["action"]) && $_REQUEST["action"] == "paid")
+    {
+        echo '<script type="text/javascript">
+         viderPanier();
+         </script>';
+    }
+
 
     if(isset($_REQUEST["insc"]))
     {
@@ -18,7 +27,7 @@
         
         if($utilisateur_manager->utilisateurExiste($_REQUEST["nom"]))
         {
-            $utilisateur = $utilisateur_manager->getUtilisateur($_REQUEST["nom"])
+            $utilisateur = $utilisateur_manager->getUtilisateur($_REQUEST["nom"], $_REQUEST["mdp"]);
             if($no_utilisateur != null)
             {
 
@@ -29,16 +38,6 @@
     }
 
 include_once("inc/footer.php");
-<?php
-include_once("inc/pretraitement.php");
-include_once("inc/header.php");
-
-if(isset($_REQUEST["action"]) && $_REQUEST["action"] == "paid")
-{
-    echo '<script type="text/javascript">
-     viderPanier();
-     </script>';
-}
 
 
 ?>
