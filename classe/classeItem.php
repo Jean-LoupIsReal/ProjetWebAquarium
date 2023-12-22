@@ -21,7 +21,13 @@ class Item
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-    
+    public function affiche(){
+        echo "<div>";
+            echo "<img src='img/items/". $this->get_type() ."/". $this->get_type() .".jpg' alt='". $this->get_type() ."'></img>"; //si temps ajouter img précise avec $poisson->get_img()
+            echo "<p>". $this->get_type() . " " . $this->get_compagnie() . " " . $this->get_nom(). "</p><p>". $this->get_prix(). "$". "</p>";
+            echo "<button onclick='ajouterItemPanier()'class='" . $this->get_no(). " ". $this->get_type() ."'>Ajouter au panier</button>";
+        echo "</div>";
+    }
     /**
      * Get the value of _no
      */ 
