@@ -40,7 +40,7 @@ include_once("inc/header.php");
             <hr>
         </span>
         <span class="prix-paiement">
-            <button>Aller au panier</button>
+            <button onclick=ajouterTous()>Aller au panier</button>
         </span>
     </section>
 </article>

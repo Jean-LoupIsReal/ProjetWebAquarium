@@ -66,6 +66,17 @@ class item_manager
         return $itemsArray;
     }
 
+    private function getAquariumByID($id)
+    {
+        
+    }
+
+    private function getItemByID($id)
+    {
+        
+    }
+
+
 
 }
 ?>

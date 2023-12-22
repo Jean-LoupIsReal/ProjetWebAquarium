@@ -1,5 +1,6 @@
 <?php
 include_once("inc/header.php");
+include_once("manager/item_manager.php")
 ?>
 
 <h1 class="titre-panier"><u>Votre Panier</u></h1>
@@ -7,14 +8,11 @@ include_once("inc/header.php");
     <section class="panier">
         <?php
             $contenu = $_COOKIE["panierAquarium"];
-            $panier = array();
+        
             foreach($contenu as $id)
             {
-                array_push($panier, );
-            }
-            foreach($panier as $objet)
-            {
-                $sousTotal += $objet
+                $sousTotal += $objet->get_prix();
+
                 ?>
                 <div class="entry">
                     <img src=<?php  ?> class="image-objet">
@@ -22,16 +20,12 @@ include_once("inc/header.php");
                     <p><?php  ?></p>
                 </div>
             <?php }
-            $panier=null;
-
             $contenu = $_COOKIE["panierItem"];
+
             foreach($contenu as $id)
             {
-            
-            }
-            foreach($panier as $objet)
-            {
-                $sousTotal += $objet
+                $sousTotal += $objet->get_prix();
+                
                 ?>
                 <div>
                     <img src=<?php  ?> class="image-objet">
@@ -40,7 +34,6 @@ include_once("inc/header.php");
                 </div>
             <?php }
             $contenu = null;
-            $panier = null;
             ?>
     </section>
     <aside class="paiement">

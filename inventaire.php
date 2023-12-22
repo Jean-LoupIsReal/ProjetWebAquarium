@@ -26,7 +26,7 @@ include_once("inc/header.php");
         {
             echo "<div>";
             echo "<img src='img/poisson.jpg' alt='poisson'></img>"; //si temps ajouter img précise avec $poisson->get_img()
-            echo  "<p>". $poisson->get_nom(). "</p><p>". $poisson->get_description(). "</p><p>". $poisson->get_prix(). "$". "</p>";
+            echo "<p>". $poisson->get_nom(). "</p><p>". $poisson->get_description(). "</p><p>". $poisson->get_prix(). "$". "</p>";
             echo "<button onclick='ajouterPoissonPanier()' class='". $poisson->get_no() . "'>Ajouter au panier</button>";
             echo "</div>";
         }
