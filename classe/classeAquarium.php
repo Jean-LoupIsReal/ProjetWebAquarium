@@ -12,6 +12,35 @@ class Aquarium
     private float $_prix;
     private string $_imgUrl; 
 
+
+    public function __serialize()
+    {
+        return [
+            "id" => $this->get_id(),
+            "compagnie" => $this->get_compagnie(),
+            "type" => $this->get_type(),
+            "dimensionsX" => $this->get_dimensionsX(),
+            "dimensionsY" => $this->get_dimensionsY(),
+            "dimensionsZ" => $this->get_dimensionsZ(),
+            "gallons" => $this->get_gallons(),
+            "prix" => $this->get_prix(),
+            "imgUrl" => $this->get_imgUrl()
+        ];
+    }
+
+    public function __unserialize(array $data)
+    {
+        $this->set_id($data["id"]);
+        $this->set_compagnie($data["compagnie"]);
+        $this->set_type($data["type"]);
+        $this->set_dimensionsX($data["deimensionsX"]);
+        $this->set_dimensionsY($data["dimensionsY"]);
+        $this->set_dimensionsZ($data["dimensionZ"]);
+        $this->set_gallons($data["gallons"]);
+        $this->set_prix($data["prix"]);
+        $this->set_imgUrl($data["imgUrl"]);
+    }
+
     /**
      * Get the value of _id
      */ 
