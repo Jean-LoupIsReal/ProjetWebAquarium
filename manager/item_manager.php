@@ -9,22 +9,27 @@ class item_manager
 
     const SELECT_ALL_POISSONS = "SELECT * FROM `poisson`";
 
-    const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.type FROM aquarium
+
+    const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.`type` FROM aquarium 
+
                                   INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
-    const SELECT_ALL_ITEMS = "SELECT *  FROM item_autre 
+    const SELECT_ALL_ITEMS = "SELECT item_autre.*,  compagnie.compagnie, type_item.type  FROM item_autre 
                               INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
                               INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
                               WHERE no_type_item = 
                               (SELECT `no` FROM type_item WHERE :type_item LIKE type_item.type)";
+    
+    const SELECT_POISSON_BY_ID = "SELECT * FROM `poisson` where `no` = :_no";
 
     const SELECT_AQUARIUM_BY_ID = "SELECT * FROM aquarium 
-                                    INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no WHERE aquarium.no = :id";
-
-    CONST SELECT_ITEM_BY_ID = "SELECT *  FROM item_autre 
-                                INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
-                                INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
-                                WHERE item_autre.no = :id";
+                                    INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no
+                                    WHERE `no` = :_no";
+    
+    const SELECT_ITEM_BY_ID = "SELECT item_autre.*, type_item.type, compagnie.compagnie  FROM item_autre 
+                               INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
+                               INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
+                               WHERE `no` = :_no";
 
     public function __construct($db) { $this->set_db($db); }
 
@@ -36,6 +41,7 @@ class item_manager
 
     public function getPoissons() : array{
         $poissonsArray = array();
+        //requete + fetch
         $poissons = $this->_db->query(self::SELECT_ALL_POISSONS)->fetchALL();
         foreach($poissons as $poisson){
             array_push($poissonsArray, new Poisson($poisson));
@@ -43,8 +49,20 @@ class item_manager
         return $poissonsArray;
     }
 
+    public function getPoissonById($no){
+        //requete
+        $query = $this->_db->prepare(self::SELECT_POISSON_BY_ID);
+        //changement de variable 
+        $query->execute(array("_no" => $no));
+        //fetch
+        $poisson = $query->fetcha();
+        //s'assure qu'il ne soit pas vide
+        assert(!empty($poisson), "L'item n'a pas été trouvé(s) dans la base de données.");
+    }
+
     public function getAquariums() : array{
         $aquariumsArray = array();
+        //requete + fetch
         $aquariums = $this->_db->query(self::SELECT_ALL_AQUARIUMS)->fetchALL();
         assert(!empty($aquariums), 'Les items n\'ont pas été trouvé(s) dans la base de données.');
         foreach($aquariums as $aquarium){
@@ -53,12 +71,26 @@ class item_manager
         return $aquariumsArray;
     }
 
+    public function getAquariumById($no){
+        //requete
+        $query = $this->_db->prepare(self::SELECT_AQUARIUM_BY_ID);
+        //changement de variable 
+        $query->execute(array("_no" => $no));
+        //fetch
+        $aquarium = $query->fetcha();
+        //s'assure qu'il ne soit pas vide
+        assert(!empty($aquarium), "L'item n'a pas été trouvé(s) dans la base de données.");
+    }
+
     public function getItems($type_item) : array{
         $itemsArray = array();
+        //requete
         $query = $this->_db->prepare(self::SELECT_ALL_ITEMS);
+        //changement de variable 
         $query->execute(array("type_item" => $type_item));
+        //fetch
         $items = $query->fetchall();
-      
+        //s'assure qu'il ne soit pas vide
         assert(!empty($items), 'Les items n\'ont pas été trouvé(s) dans la base de données.');
         foreach($items as $item){
             array_push($itemsArray, new Item($item));
@@ -66,26 +98,16 @@ class item_manager
         return $itemsArray;
     }
 
-    public function getAquariumByID($id)
-    {
-        $query = $this->_db->prepare(self::SELECT_AQUARIUM_BY_ID);
-        $query->execute(array("id" => $id));
-        $aquarium = $query->fetch();
-      
-        assert(!empty($aquarium), "L'Aquarium n'a pas été trouvé(s) dans la base de données.");
-
-        return new Aquarium($aquarium);
-    }
-
-    public function getItemByID($id)
-    {
+    public function getItemById($no){
+        //requete
         $query = $this->_db->prepare(self::SELECT_ITEM_BY_ID);
-        $query->execute(array("id" => $id));
-        $item = $query->fetch();
-      
+        //changement de variable 
+        $query->execute(array("_no" => $no));
+        //fetch
+        $item = $query->fetcha();
+        //s'assure qu'il ne soit pas vide
         assert(!empty($item), "L'item n'a pas été trouvé(s) dans la base de données.");
-        
-        return new Item($item);
+
     }
 }
 

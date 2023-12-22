@@ -21,6 +21,7 @@ class Aquarium
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
+
     public function affiche($mode)
     {
         echo "<div class='affichage'>";
@@ -34,6 +35,7 @@ class Aquarium
             {
                 echo "<button onclick='supprimerEntrée()'>Supprimer</button>";
             }
+      
         echo "</div>";
     }
 

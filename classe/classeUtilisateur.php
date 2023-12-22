@@ -10,7 +10,7 @@ class Utilisateur
     private string $_ville;
     private string $_pays;
     private string $_code_panier;
-
+    
 
     public function __construct($param = array())
     {
@@ -22,7 +22,9 @@ class Utilisateur
             if(method_exists($this, $methodName))
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
+        
     }
+
     /**
      * Get the value of _no
      */ 

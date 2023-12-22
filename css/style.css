@@ -124,7 +124,39 @@ footer{
 
 
 /*   CSS INSCRIPTIONS   */
+.inscription{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+.inscription h1{
+    width: 100%;
+    text-align: center;
+}
 
+.inscription form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content:center;
+    background-color: rgba(173, 216, 230, 0.5);
+    border-radius: 10px;
+}
+.inscription input, .inscription select{
+    border-width: 0%;
+    margin-top: 10px;
+}
+
+.inscription label{
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+}
+.inscription button{
+    margin: 20px;
+    padding: 10px;
+}
 
 
 /*   CSS CONNEXION   */
@@ -139,8 +171,8 @@ footer{
 }
 
 .inventaire > a, .inventaire > div{
-    width: 27%;
-    margin: 3%;
+    width: 25%;
+    margin: 2%;
     background-color: rgba(173, 216, 230, 0.5);
     display: flex;
     flex-wrap: wrap;
@@ -174,7 +206,8 @@ footer{
 .inventaire button{
     margin-top: 10px;
     margin-bottom: 20px;
-    padding: 15px 100px;
+    padding: 15px 0px;
+    width: 90%;
     background-color: orange;
     font-size: 20px;
     font-weight: bold;
@@ -284,6 +317,21 @@ footer{
 }
 
 /*   CSS RESPONSIVE   */
+    
+
+    
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
 
 @media only screen and (max-width: 1350px)
 {
@@ -304,6 +352,25 @@ footer{
 
 @media only screen and (max-width: 850px) {
 
+    
+
+    .col-1m {width: 8.33%;}
+    .col-2m {width: 16.66%;}
+    .col-3m {width: 25%;}
+    .col-4m {width: 33.33%;}
+    .col-5m {width: 41.66%;}
+    .col-6m {width: 50%;}
+    .col-7m {width: 58.33%;}
+    .col-8m {width: 66.66%;}
+    .col-9m {width: 75%;}
+    .col-10m {width: 83.33%;}
+    .col-11m {width: 91.66%;}
+    .col-12m {width: 100%;}
+
+    .inventaire > a, .inventaire > div{
+        width: 80%;
+        margin: 5%;
+    }
     header
     {
         height: 120px;
@@ -338,6 +405,9 @@ footer{
         height:75px;
     }
 
+}
+
+
     .panier-paiement
     {
         flex-direction:column;
@@ -368,3 +438,4 @@ footer{
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
