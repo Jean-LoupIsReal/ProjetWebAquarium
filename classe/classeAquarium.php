@@ -21,7 +21,7 @@ class Aquarium
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-    
+
     /**
      * Get the value of _id
      */ 
