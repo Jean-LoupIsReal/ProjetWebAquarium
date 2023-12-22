@@ -40,15 +40,51 @@ function getCookie(cname) {
 
 function ajouterAquarium(value)
 {
-  console.log(value);
+  let panierArray = new Array;
+
+  if(getCookie("panier") != "")
+  {
+    let panierCookie = getCookie("panierAquarium");
+    panierArray = JSON.parse(panierCookie);
+  }
+
+  console.log("avant: " + panierArray);
+  panierArray.push(value);
+  console.log("après: " + panierArray);
+  setCookie("panierAquarium", JSON.stringify(panierArray));
+
 }
 
 function ajouterPoisson()
 {
+  let panierArray = new Array;
+
+  if(getCookie("panier") != "")
+  {
+    let panierCookie = getCookie("panierPoisson");
+    panierArray = JSON.parse(panierCookie);
+  }
+
+  console.log("avant: " + panierArray);
+  panierArray.push(value);
+  console.log("après: " + panierArray);
+  setCookie("panierPoisson", JSON.stringify(panierArray));
 
 }
 
 function ajouterItem()
 {
+  let panierArray = new Array;
+
+  if(getCookie("panier") != "")
+  {
+    let panierCookie = getCookie("panierItem");
+    panierArray = JSON.parse(panierCookie);
+  }
+
+  console.log("avant: " + panierArray);
+  panierArray.push(value);
+  console.log("après: " + panierArray);
+  setCookie("panierItem", JSON.stringify(panierArray));
 
 }

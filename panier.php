@@ -8,7 +8,7 @@ include_once("manager/item_manager.php")
     <section class="liste-panier">
         <?php
             // $contenu = $_COOKIE["panierAquarium"];
-            $contenu = [1, 2, 3, 4, 5, 6, 7, 8];
+            $contenu = json_decode($_COOKIE[$panier], true);
             $sousTotal = 0;
 
             foreach($contenu as $id)
