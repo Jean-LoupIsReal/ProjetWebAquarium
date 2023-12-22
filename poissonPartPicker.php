@@ -1,4 +1,39 @@
 <!-- selectionne les éléments à acheter -->
-<?php
-var_dump(php_ini_loaded_file(), php_ini_scanned_files());
- phpinfo();
+<article class="section-principale">
+    <aside class="boutons-fonctions">
+
+    </aside>
+    <section class="part-picker">
+        <span class="picker">
+            <div class="part">
+                <h2></h2>
+                <select>
+
+                </select>
+            </div>
+            <hr>
+            <div class="part">
+                <h2></h2>
+
+            </div>
+            <hr>
+            <div class="part">
+                <h2></h2>
+                <select>
+                    
+                </select>
+            </div>
+            <hr>
+            <div class="part">
+                <h2></h2>
+                <select>
+                    
+                </select>
+            </div>
+            <hr>
+        </span>
+        <span class="prix-paiement">
+            <button>Aller au panier</button>
+        </span>
+    </section>
+</article>

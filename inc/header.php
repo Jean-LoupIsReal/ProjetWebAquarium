@@ -3,6 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 } 
 
+include_once("autoloader.php");
 include_once("classe/PDOFactory.php");
 include_once("manager/item_manager.php");
 
@@ -25,7 +26,12 @@ $itemManager = new item_manager($bdd);
 
     <header class="menu">
         <nav class="upper-nav">
-
+            <?php if(isset($_SESSION['client'])){ ?>
+            <div class="textcontain"><p><a href="connexion.php?action=logout">Se déconnecter<a></p></div>
+            <?php } else { ?>
+            <div class="textcontain"><p><a href="connexion.php">Se connecter<a></p></div>
+            <?php } ?>
+            <div class="textcontain"><p><a href="inscription.php">S'inscrire<a></p></div>
         </nav>
         <nav class="nav-menu">
             <div class="logo-titre">
