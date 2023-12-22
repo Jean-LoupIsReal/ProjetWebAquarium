@@ -45,8 +45,15 @@ $itemManager = new item_manager($bdd);
                 <a href="poissonPartPicker.php"><h2>PART PICKER</h2></a>
                 <a href="panier.php"><img class="panier" src="img/basket.png"></a>
             </div>
-            <img id="menubutton" src="img/icone_menu.png">
+            <img id="menubutton" src="img/icone_menu.png" onclick="openNav()">
         </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.php">ACCUEIL</a>
+            <a href="inventaire.php">INVENTAIRE</a>
+            <a href="poissonPartPicker.php">PART PICKER</a>
+            <a href="panier.php">PANIER<img class="panier" src="img/basket.png"></a>
+        </div>
     </header>
 
 <main class="contenu">

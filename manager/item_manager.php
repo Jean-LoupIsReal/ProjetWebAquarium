@@ -12,7 +12,7 @@ class item_manager
     const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.type FROM aquarium
                                   INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
-    const SELECT_ALL_ITEMS = "SELECT *  FROM item_autre 
+    const SELECT_ALL_ITEMS = "SELECT item_autre.*, type_item.type, compagnie.compagnie  FROM item_autre
                               INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
                               INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
                               WHERE no_type_item = 
@@ -25,6 +25,8 @@ class item_manager
                                 INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
                                 INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
                                 WHERE item_autre.no = :id";
+
+    CONST SELECT_POISSON_BY_ID = "SELECT * FROM `poisson` WHERE no = :id";
 
     public function __construct($db) { $this->set_db($db); }
 
@@ -86,6 +88,17 @@ class item_manager
         assert(!empty($item), "L'item n'a pas été trouvé(s) dans la base de données.");
         
         return new Item($item);
+    }
+
+    public function getPoissonByID($id)
+    {
+        $query = $this->_db->prepare(self::SELECT_POISSON_BY_ID);
+        $query->execute(array("id" => $id));
+        $poisson = $query->fetch();
+      
+        assert(!empty($poisson), "Le poisson n'a pas été trouvé(s) dans la base de données.");
+        
+        return new Poisson($poisson);
     }
 }
 

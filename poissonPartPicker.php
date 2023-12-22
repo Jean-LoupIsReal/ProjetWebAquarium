@@ -9,7 +9,7 @@ include_once("inc/header.php");
         <button>Passer au panier</button>
     </aside>
     <section class="part-picker">
-        <span class="picker">
+        <form class="picker">
             <div class="part">
                 <h2><u>Aquarium</u></h2>
                 <select>
@@ -60,7 +60,7 @@ include_once("inc/header.php");
                 <hr>
             </div>
             <div class="part">
-                <h2><u></u></h2>
+                <label><u></u></label>
                 <select>
                     
                 </select>
@@ -73,9 +73,9 @@ include_once("inc/header.php");
                 </select>
                 <hr>
             </div>
-        </span>
+        </form>
         <span class="prix-paiement">
-            <button onclick=ajouterTous()>Aller au panier</button>
+            <button onclick=submitPick()>Aller au panier</button>
         </span>
     </section>
 </article>
