@@ -10,7 +10,7 @@ include_once("inc/header.php");
         $categories = ["Poisson", "Aquarium", "Chauffe-eau", "Substrait", "Décoration", "Filtre", "Lumière", "Thermomètre", "Nettoyage" ];
         foreach($categories as $cat)
         {   
-            echo '<a href="/webs5/ProjetWebAquarium/inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="categ">';
+            echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="categ col-3 col-11m">';
             echo    '<img src="img/'. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '.jpg" alt="">';
             echo    '<p>'. $cat .'</p>';
             echo '</a>';
@@ -44,13 +44,8 @@ include_once("inc/header.php");
         //affiche les items
         foreach($items as $item)
         {
-            echo "<div>";
-            echo "<img src='img/items/". $_REQUEST["categorie"] ."/". $_REQUEST["categorie"] .".jpg' alt='". $_REQUEST["categorie"] ."'></img>"; //si temps ajouter img précise avec $poisson->get_img()
-            echo "<p>". $item->get_type() . " " . $item->get_compagnie() . " " . $item->get_nom(). "</p><p>". $item->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterItemPanier()'class='" . $item->get_no(). " ". $_REQUEST["categorie"] ."'>Ajouter au panier</button>";
-            echo "</div>";
+            $item->affiche();
         }
-        
     }
 
     ?>

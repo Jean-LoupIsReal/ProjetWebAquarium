@@ -9,10 +9,10 @@ class item_manager
 
     const SELECT_ALL_POISSONS = "SELECT * FROM `poisson`";
 
-    const SELECT_ALL_AQUARIUMS = "SELECT * FROM aquarium 
+    const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.`type` FROM aquarium 
                                   INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
-    const SELECT_ALL_ITEMS = "SELECT *  FROM item_autre 
+    const SELECT_ALL_ITEMS = "SELECT item_autre.*,  compagnie.compagnie, type_item.type  FROM item_autre 
                               INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
                               INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
                               WHERE no_type_item = 
