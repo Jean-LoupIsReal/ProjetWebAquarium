@@ -10,7 +10,9 @@
         </span>
         <span class="picker">
             <div class="part">
-
+                <?php 
+                
+                ?>
             </div>
             <hr>
             <div class="part">
