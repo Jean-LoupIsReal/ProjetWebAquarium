@@ -24,11 +24,7 @@ include_once("inc/header.php");
         //affiche les poissons
         foreach($poissons as $poisson)
         {
-            echo "<div>";
-            echo "<img src='img/poisson.jpg' alt='poisson'></img>"; //si temps ajouter img précise avec $poisson->get_img()
-            echo  "<p>". $poisson->get_nom(). "</p><p>". $poisson->get_description(). "</p><p>". $poisson->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterPoissonPanier()' class='". $poisson->get_no() . "'>Ajouter au panier</button>";
-            echo "</div>";
+            $poisson->affiche();
         }
     }
 
@@ -38,11 +34,7 @@ include_once("inc/header.php");
         //affiche les aquariums
         foreach($aquariums as $aquarium)
         {
-            echo "<div>";
-            echo "<img src='img/aquariums/". $aquarium->get_img(). "' alt='". $aquarium->get_img(). "'></img>"; //si temps ajouter img précise avec $poisson->get_img()
-            echo "<p>Aquarium ". $aquarium->get_type(). " ". $aquarium->get_gallons(). "</p><p>". $aquarium->get_dimensions(). "</p><p>". $aquarium->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterAquariumPanier()'class='" . $aquarium->get_no(). "'>Ajouter au panier</button>";
-            echo "</div>";
+            $aquarium->affiche();
         }
     }
 
@@ -52,11 +44,7 @@ include_once("inc/header.php");
         //affiche les items
         foreach($items as $item)
         {
-            echo "<div>";
-            echo "<img src='img/items/". $_REQUEST["categorie"] ."/". $_REQUEST["categorie"] .".jpg' alt='". $_REQUEST["categorie"] ."'></img>"; //si temps ajouter img précise avec $poisson->get_img()
-            echo "<p>". $item->get_type() . " " . $item->get_compagnie() . " " . $item->get_nom(). "</p><p>". $item->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterItemPanier()'class='" . $item->get_no(). " ". $_REQUEST["categorie"] ."'>Ajouter au panier</button>";
-            echo "</div>";
+            $item->affiche();
         }
         
     }
