@@ -9,7 +9,9 @@ class item_manager
 
     const SELECT_ALL_POISSONS = "SELECT * FROM `poisson`";
 
+
     const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.`type` FROM aquarium 
+
                                   INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
     const SELECT_ALL_ITEMS = "SELECT item_autre.*,  compagnie.compagnie, type_item.type  FROM item_autre 
@@ -105,7 +107,8 @@ class item_manager
         $item = $query->fetcha();
         //s'assure qu'il ne soit pas vide
         assert(!empty($item), "L'item n'a pas été trouvé(s) dans la base de données.");
-    }
 
+    }
 }
+
 ?>

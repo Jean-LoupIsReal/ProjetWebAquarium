@@ -7,7 +7,9 @@
         $categories = ["Poisson", "Aquarium", "Chauffe-eau", "Substrait", "Décoration", "Filtre", "Lumière", "Thermomètre", "Nettoyage" ];
         foreach($categories as $cat)
         {   
+
             echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="categ col-3 col-11m">';
+
             echo    '<img src="img/'. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '.jpg" alt="">';
             echo    '<p>'. $cat .'</p>';
             echo '</a>';
@@ -21,7 +23,9 @@
         //affiche les poissons
         foreach($poissons as $poisson)
         {
-            $poisson->affiche();
+
+            $poisson->affiche("ajouter");
+
         }
     }
 
@@ -31,7 +35,9 @@
         //affiche les aquariums
         foreach($aquariums as $aquarium)
         {
-            $aquarium->affiche();
+
+            $aquarium->affiche("ajouter");
+
         }
     }
 
@@ -41,7 +47,7 @@
         //affiche les items
         foreach($items as $item)
         {
-            $item->affiche();
+            $item->affiche("ajouter");
         }
     }
 
