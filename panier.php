@@ -5,27 +5,28 @@ include_once("manager/item_manager.php")
 
 <h1 class="titre-panier"><u>Votre Panier</u></h1>
 <article class="panier-paiement"> 
-    <section class="panier">
+    <section class="liste-panier">
         <?php
-            $contenu = $_COOKIE["panierAquarium"];
-        
+            // $contenu = $_COOKIE["panierAquarium"];
+            $contenu = [1, 2, 3, 4, 5, 6, 7, 8];
+            $sousTotal = 0;
+
             foreach($contenu as $id)
             {
-                $sousTotal += $objet->get_prix();
+                $tempAquarium = $itemManager->getAquariumByID($id);
+                $sousTotal += $tempAquarium->get_prix();
 
-                ?>
-                <div class="entry">
-                    <img src=<?php  ?> class="image-objet">
-                    <h2><?php  ?></h2>
-                    <p><?php  ?></p>
-                </div>
-            <?php }
+                $tempAquarium->affiche("supprimer");
+
+            
+            }
             $contenu = $_COOKIE["panierItem"];
 
             foreach($contenu as $id)
             {
+                $tempItem = $itemManager->getItemByID($id);
                 $sousTotal += $objet->get_prix();
-                
+
                 ?>
                 <div>
                     <img src=<?php  ?> class="image-objet">
@@ -36,10 +37,11 @@ include_once("manager/item_manager.php")
             $contenu = null;
             ?>
     </section>
+
     <aside class="paiement">
          <div>
             <h1>Paiement</h1>
-            <span>
+            <span class="paiement-cout">
                 <div>
                     <p>Sous-Total</p> <p><?php  ?></p>
                 </div>
@@ -49,11 +51,9 @@ include_once("manager/item_manager.php")
                 <div>
                     <p>Taxes</p> <p><<?php   ?>/p>
                 </div>
-                <hr>
-                <div>
-                <p>Total</p> <p><?php   ?></p>
-                </div>
             </span>
+            <hr>
+            <h1>Total: <?php   ?>$</h1>
             <button>Payer</button>
          </div>
     </aside>

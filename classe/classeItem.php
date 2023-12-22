@@ -21,11 +21,19 @@ class Item
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-    public function affiche(){
-        echo "<div>";
+
+    public function affiche($mode){
+        echo "<div class='affichage'>";
             echo "<img src='img/items/". $this->get_type() ."/". $this->get_type() .".jpg' alt='". $this->get_type() ."'></img>"; //si temps ajouter img précise avec $poisson->get_img()
             echo "<p>". $this->get_type() . " " . $this->get_compagnie() . " " . $this->get_nom(). "</p><p>". $this->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterItemPanier()'class='" . $this->get_no(). " ". $this->get_type() ."'>Ajouter au panier</button>";
+            if($mode == "ajouter")
+            {
+                echo "<button onclick='ajouterItem(". $this->get_no() .")'class='" . $this->get_no(). "'>Ajouter au panier</button>";
+            }
+            elseif($mode == "supprimer")
+            {
+                echo "<button onclick='supprimerEntrée()'>Supprimer</button>";
+            }
         echo "</div>";
     }
     /**
@@ -161,7 +169,7 @@ class Item
      *
      * @return  self
      */ 
-    public function set_imgUrl($_img)
+    public function set_img($_img)
     {
         $this->_img = $_img;
 

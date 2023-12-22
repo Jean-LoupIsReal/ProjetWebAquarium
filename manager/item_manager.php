@@ -9,7 +9,7 @@ class item_manager
 
     const SELECT_ALL_POISSONS = "SELECT * FROM `poisson`";
 
-    const SELECT_ALL_AQUARIUMS = "SELECT * FROM aquarium 
+    const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.type FROM aquarium
                                   INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
     const SELECT_ALL_ITEMS = "SELECT *  FROM item_autre 
@@ -21,7 +21,7 @@ class item_manager
     const SELECT_AQUARIUM_BY_ID = "SELECT * FROM aquarium 
                                     INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no WHERE aquarium.no = :id";
 
-    CONST SELECT_ITEMS_BY_ID = "SELECT *  FROM item_autre 
+    CONST SELECT_ITEM_BY_ID = "SELECT *  FROM item_autre 
                                 INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
                                 INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
                                 WHERE item_autre.no = :id";
@@ -66,17 +66,27 @@ class item_manager
         return $itemsArray;
     }
 
-    private function getAquariumByID($id)
+    public function getAquariumByID($id)
     {
-        
+        $query = $this->_db->prepare(self::SELECT_AQUARIUM_BY_ID);
+        $query->execute(array("id" => $id));
+        $aquarium = $query->fetch();
+      
+        assert(!empty($aquarium), "L'Aquarium n'a pas été trouvé(s) dans la base de données.");
+
+        return new Aquarium($aquarium);
     }
 
-    private function getItemByID($id)
+    public function getItemByID($id)
     {
+        $query = $this->_db->prepare(self::SELECT_ITEM_BY_ID);
+        $query->execute(array("id" => $id));
+        $item = $query->fetch();
+      
+        assert(!empty($item), "L'item n'a pas été trouvé(s) dans la base de données.");
         
+        return new Item($item);
     }
-
-
-
 }
+
 ?>

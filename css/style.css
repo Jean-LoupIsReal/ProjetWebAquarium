@@ -185,12 +185,12 @@ footer{
 
 .part-picker
 {
-
+    background-color: var(--bleupale);
 }
 
 .part
 {
-    
+    background-color: var(--bleutrespale);
 }
 
 /*   CSS PANIER   */
@@ -204,26 +204,83 @@ footer{
 {
     display:flex;
     flex-direction: row;
+    overflow:hidden;
     gap: 5%;
     height:auto;
     padding: 20px;
 }
 
-.panier
+.liste-panier
 {
     width: 70%;
+    height:600px;
+    overflow:scroll;
     background-color: var(--bleumarin);
 }
 
 .paiement
 {
     width:20%;
+    height: 350px;
     background-color: var(--bleupale);
+    border: dashed 3px var(--bleumarin);
 }
 
-.entry
+.paiement h1
 {
-    background-color: white;
+    text-align: center;
+}
+
+.paiement button
+{
+    margin-left:30%;
+    color: white;
+    background-color: var(--bleumarin);
+    width: 35%;
+    height:35px;
+    border-radius: 5px;
+}
+
+.paiement hr
+{
+    border-color: var(--grisfonce);
+}
+
+.paiement-cout
+{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.paiement-cout div
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.liste-panier .affichage
+{
+    display:flex;
+    flex-direction: row;
+    width:98%;
+    height:140px;
+    margin: 5px auto 5px auto;
+    border-radius: 10px;
+    background-color:var(--bleupale);
+    opacity:80%;
+}
+
+.liste-panier .affichage img
+{
+    width:125px;
+    height: 125px;
+}
+
+.liste-panier .affichage button
+{
+    height: 30px;
 }
 
 /*   CSS RESPONSIVE   */

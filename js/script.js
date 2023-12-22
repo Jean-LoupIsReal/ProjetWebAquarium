@@ -37,3 +37,18 @@ function getCookie(cname) {
   }
   return "";
 }
+
+function ajouterAquarium(value)
+{
+  console.log(value);
+}
+
+function ajouterPoisson()
+{
+
+}
+
+function ajouterItem()
+{
+
+}

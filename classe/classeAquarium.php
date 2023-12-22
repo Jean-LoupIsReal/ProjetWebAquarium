@@ -21,11 +21,19 @@ class Aquarium
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-    public function affiche(){
-        echo "<div>";
+    public function affiche($mode)
+    {
+        echo "<div class='affichage'>";
             echo "<img src='img/aquariums/". $this->get_img(). "' alt='". $this->get_img(). "'></img>"; //si temps ajouter img précise avec $poisson->get_img()
             echo "<p>Aquarium ". $this->get_type(). " ". $this->get_gallons(). "</p><p>". $this->get_dimensions(). "</p><p>". $this->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterAquariumPanier()'class='" . $this->get_no(). "'>Ajouter au panier</button>";
+            if($mode == "ajouter")
+            {
+                echo "<button onclick='ajouterAquarium(". $this->get_no() .")'class='" . $this->get_no(). "'>Ajouter au panier</button>";
+            }
+            elseif($mode == "supprimer")
+            {
+                echo "<button onclick='supprimerEntrée()'>Supprimer</button>";
+            }
         echo "</div>";
     }
 
@@ -45,7 +53,6 @@ class Aquarium
     public function set_no($_id)
     {
         $this->_no = $_id;
-
     }
 
     /**

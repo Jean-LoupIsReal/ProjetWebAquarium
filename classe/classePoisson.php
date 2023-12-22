@@ -21,11 +21,18 @@ class Poisson{
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-    public function affiche(){
-        echo "<div>";
+    public function affiche($mode){
+        echo "<div class='affichage'>";
             echo "<img src='img/poisson.jpg' alt='poisson'></img>"; //si temps ajouter img précise avec $poisson->get_img()
             echo  "<p>". $this->_nom . "</p><p>".  $this->_description. "</p><p>".  $this->_prix. "$". "</p>";
-            echo "<button onclick='ajouterPoissonPanier()' class='".  $this->_no . "'>Ajouter au panier</button>";
+            if($mode == "ajouter")
+            {
+                echo "<button onclick='ajouterPoisson(". $this->get_no() .")'class='" . $this->get_no(). "'>Ajouter au panier</button>";
+            }
+            elseif($mode == "supprimer")
+            {
+                echo "<button onclick='supprimerEntrée()'>Supprimer</button>";
+            }
         echo "</div>";
     }
 
@@ -90,13 +97,13 @@ class Poisson{
     }
 
     // Getter pour _gallon_minimum
-    public function get_gallons_minimum() {
-        return $this->_gallons_minimum;
+    public function get_gallon_minimum() {
+        return $this->_gallon_minimum;
     }
 
     // Setter pour _gallon_minimum
-    public function set_gallons_minimum($gallons_minimum) {
-        $this->_gallons_minimum = $gallons_minimum;
+    public function set_gallon_minimum($gallon_minimum) {
+        $this->_gallon_minimum = $gallon_minimum;
     }
 
     // Getter pour _prix
