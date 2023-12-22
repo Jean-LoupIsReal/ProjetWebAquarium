@@ -29,7 +29,7 @@ class Item
         echo "</div>";
     }
     /**
-     * Get the value of _id
+     * Get the value of _no
      */ 
     public function get_no()
     {
@@ -37,13 +37,13 @@ class Item
     }
 
     /**
-     * Set the value of _id
+     * Set the value of _no
      *
      * @return  self
      */ 
-    public function set_no($_id)
+    public function set_no($_no)
     {
-        $this->_no = $_id;
+        $this->_no = $_no;
 
         return $this;
     }
@@ -113,7 +113,7 @@ class Item
      */ 
     public function get_no_range_gallons()
     {
-        return $this->_range_gallons;
+        return $this->_no_range_gallons;
     }
 
     /**
@@ -121,9 +121,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_no_range_gallons($range_gallon)
+    public function set_nono_range_gallons($range_gallon)
     {
-        $this->_range_gallons = $range_gallon;
+        $this->_no_range_gallons = $range_gallon;
 
         return $this;
     }
@@ -163,7 +163,7 @@ class Item
      */ 
     public function set_imgUrl($_img)
     {
-        $this->_imgUrl = $_img;
+        $this->_img = $_img;
 
         return $this;
     }

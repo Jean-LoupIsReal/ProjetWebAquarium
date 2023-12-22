@@ -3,6 +3,7 @@
     --bleupale: #00A1FF;
     --bleumarin: #010925;
     --grisfonce: #1b1b1b;
+    --bleutrespale: #9de0ff;
 }
 
 body{
@@ -182,11 +183,48 @@ footer{
 
 /*   CSS POISSONPARTPICKER   */
 
+.part-picker
+{
 
+}
+
+.part
+{
+    
+}
 
 /*   CSS PANIER   */
 
+.titre-panier
+{
+    margin-left: 20px;
+}
 
+.panier-paiement
+{
+    display:flex;
+    flex-direction: row;
+    gap: 5%;
+    height:auto;
+    padding: 20px;
+}
+
+.panier
+{
+    width: 70%;
+    background-color: var(--bleumarin);
+}
+
+.paiement
+{
+    width:20%;
+    background-color: var(--bleupale);
+}
+
+.entry
+{
+    background-color: white;
+}
 
 /*   CSS RESPONSIVE   */
 
@@ -194,6 +232,16 @@ footer{
 {
     .logo-titre h1{
         display:none;
+    }
+
+    .panier-paiement
+    {
+        gap:0;
+    }
+
+    .paiement
+    {
+        width:30%;
     }
 }
 
@@ -231,6 +279,23 @@ footer{
         padding-left:50%;
         width:75px;
         height:75px;
+    }
+
+    .panier-paiement
+    {
+        flex-direction:column;
+        align-items: center;
+    }
+
+    .panier
+    {
+        width: 80%;
+        background-color: var(--bleumarin);
+    }
+
+    .paiement
+    {
+        width:60%;
     }
 }
 

@@ -18,6 +18,14 @@ class item_manager
                               WHERE no_type_item = 
                               (SELECT `no` FROM type_item WHERE :type_item LIKE type_item.type)";
 
+    const SELECT_AQUARIUM_BY_ID = "SELECT * FROM aquarium 
+                                    INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no WHERE aquarium.no = :id";
+
+    CONST SELECT_ITEMS_BY_ID = "SELECT *  FROM item_autre 
+                                INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
+                                INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
+                                WHERE item_autre.no = :id";
+
     public function __construct($db) { $this->set_db($db); }
 
     private function set_db($db) {
@@ -57,6 +65,17 @@ class item_manager
         }
         return $itemsArray;
     }
+
+    private function getAquariumByID($id)
+    {
+        
+    }
+
+    private function getItemByID($id)
+    {
+        
+    }
+
 
 
 }
