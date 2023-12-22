@@ -1,7 +1,10 @@
 <?php
-include_once("inc/header.php")
+include_once("inc/header.php");
 
-if()
+    if(isset($_REQUEST["nom"]))
+    {
+       
+    }
 
-include_once("inc/footer.php")
+include_once("inc/footer.php");
 ?>

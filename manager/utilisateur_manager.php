@@ -8,8 +8,11 @@ class utilisateur_manager
     const INSERT_UTILISATEUR = "INSERT INTO utilisateur (nom_utilisateur, mdp, email, adresse, ville, no_pays, code_panier) 
                                 VALUES(:nom_utilisateur, :mdp, :email, :adresse, :ville, :no_pays, :code_panier)";
     
-    const SELECT_NOM_UTILISATEUR_BY_ID = "SELECT * FROM utilisateur
-                                         WHERE nom_utilisateur = :nom_utilisateur AND mdp = :mdp";
+    const CONNECTION_UTILISATEUR = "SELECT `no`  FROM utilisateur
+                                    INNER JOIN pays ON utilisateur.no_pays = pays.no 
+                                    WHERE nom_utilisateur = :nom_utilisateur AND mdp = :mdp";
+
+    const UTILISATEUR_EXISTE = "SELECT `no` FROM utilisateur WHERE nom_utilisateur LIKE CONCAT('%', :nom_utilisateur, '%')"
 
     public function __construct($db) { $this->set_db($db); }
 
@@ -38,9 +41,12 @@ class utilisateur_manager
                                     "code_panier" => $code_panier);
         $query = $this->_db->prepare(self::INSERT_UTILISATEUR);
         assert($query->execute($arrayUtilisateur));
-
     }
 
-    public function 
-    $query = $this->_db->prepare(self::CLIENT_EXISTE);
+    public function exist($nom_utilisateur, $mdp) : Utilisateur{
+        $query = $this->_db->prepare(self::CONNECTION_UTILISATEUR);
+        assert($query->execute(array("nom_utilisateur" => $nom_utilisateur, "mdp" => $mdp)));
+        $ut = $query->fetch();
+
+    }
 }

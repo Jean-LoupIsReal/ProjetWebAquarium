@@ -3,7 +3,7 @@
 <div class="inscription">
     <h1>Création de votre compte</h1>
 
-    <form action="traitement.php" method="post" class="register">
+    <form action="traitement.php" method="post" class="insc">
         <!-- Entrée de nom -->
         <label for="nom" class='col-3 col-12m'>Nom d'utilisateur :</label>
         <input type="text" name="nom" id="nom"class='col-7 col-11m' required>
