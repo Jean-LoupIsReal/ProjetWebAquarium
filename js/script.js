@@ -11,6 +11,14 @@ for (let i = 0; i <= suppressors.length; i++) {
   suppressors[i].addEventListener("click", deleteEntry(e));
 }
 
+/* Configuration carousel */
+/*let bouton_carousel = document.getElementsBy("bouton_carousel")
+for(let i = 0; i = bouton_carousel.length; i++){
+  bouton_carousel[i].addEventListener("click", function(){
+    let slides = document.getElementsBy("slideI")
+    slides.forEach();
+  })
+}*/
 
 //fait apparaitre le side menu
 function openNav() 
