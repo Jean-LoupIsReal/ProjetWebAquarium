@@ -83,7 +83,9 @@ include_once("inc/header.php");
             <hr>
             <h1>Total: <?php echo $sousTotal; ?>$</h1>
             <!-- retourne à la page principale en vidant le panier !-->
-            <button><a href="index.php?action=paid">Payer</a></button>
+            <?php if($sousTotal != 0) { ?>
+            <button onclick=viderPanier()><a href="index.php">Payer</a></button>
+             <?php } ?>
          </div>
     </aside>
 </article>

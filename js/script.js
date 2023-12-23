@@ -107,7 +107,7 @@ function deleteCookie(cname)
 }
 
 //vide le panier et recharge la page pour afficher le changement
-function viderPanier()
+function viderPanier(message)
 {
   deleteCookie("panierAquarium");
   deleteCookie("panierItem");
