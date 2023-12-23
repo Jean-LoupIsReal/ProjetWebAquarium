@@ -1,5 +1,15 @@
-document.getElementById("menubutton").addEventListener(onclick, openNav);
-document.getElementById("closebutton").addEventListener(onclick, closeNav);
+document.getElementById("menubutton").addEventListener("click", openNav);
+document.getElementById("closebutton").addEventListener("click", closeNav);
+
+let selectors = document.getElementsByClassName("picker");
+for (let i = 0; i <= selectors.length; i++) {
+  selectors[i].addEventListener("blur", updateInfo(e));
+}
+
+let suppressors = document.getElementsByClassName("supp");
+for (let i = 0; i <= suppressors.length; i++) {
+  suppressors[i].addEventListener("click", deleteEntry(e));
+}
 
 /* Configuration carousel */
 /*let bouton_carousel = document.getElementsBy("bouton_carousel")
@@ -9,26 +19,20 @@ for(let i = 0; i = bouton_carousel.length; i++){
     slides.forEach();
   })
 }*/
-
-for(let i = 0; i < boutonSuprimer.length; i++)
-{
-  boutonSuprimer[i].addEventListener("click", function(){
-    boutonSuprimer[i].classList
-  })
-}
-
 /* Set the width of the side navigation to 250px */
+//fait apparaitre le side menu
 function openNav() 
 {
     document.getElementById("mySidenav").style.width = "250px";
 }
   
-  /* Set the width of the side navigation to 0 */
+//fait disparaitre le side menu
 function closeNav() 
 {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+//ajoute un aquarium au panier
 function ajouterAquarium(objectID)
 {
   let panierArray = new Array;
@@ -46,6 +50,7 @@ function ajouterAquarium(objectID)
 
 }
 
+//ajoute un poisson au panier
 function ajouterPoisson(objectID)
 {
   let panierArray = new Array;
@@ -62,6 +67,7 @@ function ajouterPoisson(objectID)
 
 }
 
+//ajoute un poisson au panier
 function ajouterItem(objectID)
 {
   let panierArray = new Array;
@@ -79,56 +85,40 @@ function ajouterItem(objectID)
 
 }
 
+//ajoute en masse les select non-vides au panier
 function transferPick()
 {
   let form = document.forms["partpicker"];
 
-  //ce serait meilleur si array.forEach() fonctionnait avec le form
   if(form["aquarium"].value != 0)
   {
     ajouterAquarium(form["aquarium"].value);
-  }  
-  if(form["chauffe"].value != 0)
-  {
-    ajouterItem(form["chauffe"].value);
-  }
-  if(form["lumiere"].value != 0)
-  {
-    ajouterItem(form["lumiere"].value);
-  }
-  if(form["deco"].value != 0)
-  {
-    ajouterItem(form["deco"].value);
-  }
-  if(form["substrait"].value != 0)
-  {
-    ajouterItem(form["substrait"].value);
-  }
-  if(form["nettoyage"].value != 0)
-  {
-    ajouterItem(form["nettoyage"].value);
-  }
-  if(form["thermo"].value != 0)
-  {
-    ajouterItem(form["thermo"].value);
-  }
-  if(form["filtre"].value != 0)
-  {
-    ajouterItem(form["filtre"].value);
-  }
+  } 
 
+  form.slice(1).forEach(element => {
+    if(element.value != 0)
+    {
+      ajouterItem(element.value);
+    }
+  });
 }
 
-function updateInfo()
+//mets à jours les infos d'un objet sélectionné dans un partpicker
+//ne fonctionne pas car event reste undefined
+//je ne sais pas pourquoi
+function updateInfo(e)
 {
-
+  let thing = e.target;
+  console.log(thing)
 }
 
+//détruit un cookie
 function deleteCookie(cname)
 {
   setCookie(cname, 0, 0);
 }
 
+//vide le panier et recharge la page pour afficher le changement
 function viderPanier()
 {
   deleteCookie("panierAquarium");
@@ -137,7 +127,7 @@ function viderPanier()
   location.reload();
 }
 
-
+//crée un cookie ou le modifie
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -145,6 +135,7 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+//obtient la valeur d'un cookie
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
