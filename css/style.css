@@ -120,9 +120,6 @@ footer{
 
 
 /*   CSS INDEX    */
-a.slideI.hide{
-    display: none;
-}
 .index h1{
     margin-top: 5%;
 }
@@ -159,7 +156,6 @@ a.slideI.hide{
     font-size: 30px;
 }
 .index .slideI{
-    max-width: 50%;
     text-decoration: none;
     background-color: rgba(173, 216, 230, 0.5);
     display: flex;
@@ -172,6 +168,7 @@ a.slideI.hide{
     color: black;
     inset:0;
     max-height: 70%;
+    margin: 20px;
 }
 .index img{
     max-width: 80%;
