@@ -159,6 +159,8 @@ footer{
 
 
 /*   CSS INDEX    */
+
+
 .index h1{
     margin-top: 5%;
 }
@@ -176,6 +178,8 @@ footer{
 
 
 /*   CSS INSCRIPTIONS  &&  CSS CONNEXION   */
+
+
 .inscription{
     display:flex;
     flex-wrap: wrap;
@@ -215,6 +219,8 @@ footer{
 
 
 /* CSS TRAITEEMT */
+
+
 .traitement h1{
     width: 100%;
     text-align: center;
@@ -223,6 +229,8 @@ footer{
 
 
 /*   CSS INVENTAIRE   */
+
+
 .inventaire{
     display: flex;
     flex-wrap: wrap;
@@ -277,24 +285,46 @@ footer{
     border-radius: 10px;
 }
 
+
 /*   CSS POISSONPARTPICKER   */
+
 
 .section-principale
 {
     display:flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     margin: 2% auto auto auto;
 }
 
 .boutons-fonctions
 {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
     float:left;
+}
+.boutons-fonctions button
+{
+    height: 45px;
+    width: 150px;
+    border-radius: 3px;
+}
+.boutons-fonctions #bouton-inventaire
+{
+    background-color: var(--bleumarin);
+    color:white;
+    border-color: white;
+}
+.boutons-fonctions #bouton-panier
+{
+    background-color: green;
 }
 
 .part-picker
 {
     margin-top:2%;
+    margin-bottom:10%;
     background-color: var(--bleupale);
 
 }
@@ -302,6 +332,14 @@ footer{
 .part
 {
     background-color: var(--bleutrespale);
+    height:100px;
+    margin: 2px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.part select
+{
+    width:250px;
 }
 
 /*   CSS PANIER   */

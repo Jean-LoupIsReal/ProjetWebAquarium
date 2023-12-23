@@ -64,6 +64,51 @@ function ajouterItem(objectID)
 
 }
 
+function transferPick()
+{
+  let form = document.forms["partpicker"];
+
+  //ce serait meilleur si array.forEach() fonctionnait avec le form
+  if(form["aquarium"].value != 0)
+  {
+    ajouterAquarium(form["aquarium"].value);
+  }  
+  if(form["chauffe"].value != 0)
+  {
+    ajouterItem(form["chauffe"].value);
+  }
+  if(form["lumiere"].value != 0)
+  {
+    ajouterItem(form["lumiere"].value);
+  }
+  if(form["deco"].value != 0)
+  {
+    ajouterItem(form["deco"].value);
+  }
+  if(form["substrait"].value != 0)
+  {
+    ajouterItem(form["substrait"].value);
+  }
+  if(form["nettoyage"].value != 0)
+  {
+    ajouterItem(form["nettoyage"].value);
+  }
+  if(form["thermo"].value != 0)
+  {
+    ajouterItem(form["thermo"].value);
+  }
+  if(form["filtre"].value != 0)
+  {
+    ajouterItem(form["filtre"].value);
+  }
+
+}
+
+function updateInfo()
+{
+
+}
+
 function deleteCookie(cname)
 {
   setCookie(cname, 0, 0);
@@ -77,10 +122,6 @@ function viderPanier()
   location.reload();
 }
 
-function afficherChoix(id)
-{
-  
-}
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
