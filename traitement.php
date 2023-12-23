@@ -29,6 +29,18 @@
     }
     else if(isset($_REQUEST["con"])) {
         echo "<h1>Mauvais nom d'utilisateur ou mot de passe!</h1>";
+        
+        if($utilisateur_manager->utilisateurExiste($_REQUEST["nom"]))
+        {
+            $utilisateur = $utilisateur_manager->getUtilisateur($_REQUEST["nom"], $_REQUEST["mdp"]);
+            if($no_utilisateur != null)
+            {
+
+            }
+
+            echo "<h2>Bienvenue ". $utilisateur->get_nom_utilisateur(). "</h2>";
+        }
+
     }
     echo "</div>";
 include_once("inc/footer.php");

@@ -31,7 +31,7 @@ class Item
             }
             elseif($mode == "supprimer")
             {
-                echo "<button onclick='supprimerObjet()'>Supprimer</button>";
+                echo "<button class'supp'>Supprimer</button>";
             }
         echo "</div>";
     }

@@ -24,7 +24,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Aquarium</u></h2>
-                <select class="aqua-picker" name="aquarium" onblur=updateInfo()>
+                <select class="aqua-picker" name="aquarium">
                     <option value="0">Aucun</option>
                     <?php foreach ($aquariums as $aquarium)
                             echo '<option value="' . $aquarium->get_no() . '">' . $aquarium->get_type() . " " . $aquarium->get_gallons() . ' Gallons</option>'; ?>
@@ -35,7 +35,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Filtre</u></h2>
-                <select class="picker" name="filtre" onblur=updateInfo()>
+                <select class="picker" name="filtre">
                     <option value="0">Aucun</option>
                     <?php  foreach ($filtres as $filtre)
                             echo '<option value="' . $filtre->get_no() . '">' . $filtre->get_nom() . '</option>'; ?>
@@ -46,7 +46,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Chauffe-Eau</u></h2>
-                <select class="picker" name="chauffe" onblur=updateInfo()>
+                <select class="picker" name="chauffe">
                     <option value="0">Aucun</option>
                     <?php foreach ($chauffeeaus as $chauffeeau)
                             echo '<option value="' . $chauffeeau->get_no() . '">' . $chauffeeau->get_nom() . '</option>'; ?>
@@ -57,7 +57,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Substrait</u></h2>
-                <select class="picker" name="substrait" onblur=updateInfo()>
+                <select class="picker" name="substrait">
                     <option value="0">Aucun</option>
                     <?php foreach ($substraits as $substrait)
                             echo '<option value="' . $substrait->get_no() . '">' . $substrait->get_nom() . '</option>'; ?>
@@ -68,7 +68,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Décoration</u></h2>
-                <select class="picker" name="deco" onblur=updateInfo()>
+                <select class="picker" name="deco">
                     <option value="0">Aucun</option>
                     <?php foreach ($decorations as $decoration)
                             echo '<option value="' . $decoration->get_no() . '">' . $decoration->get_nom() . '</option>'; ?>
@@ -78,7 +78,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Lumière</u></h2>
-                <select class="picker" name="lumiere" onblur=updateInfo()>
+                <select class="picker" name="lumiere">
                     <option value="0">Aucun</option>
                     <?php foreach ($lumieres as $lumiere)
                             echo '<option value="' . $lumiere->get_no() . '">' . $lumiere->get_nom() . '</option>'; ?>
@@ -89,7 +89,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Thermomètre</u></h2>
-                <select class="picker" name="thermo" onblur=updateInfo()>
+                <select class="picker" name="thermo">
                     <option value="0">Aucun</option>
                     <?php foreach ($thermometres as $thermometre)
                             echo '<option value="' . $thermometre->get_no() . '">' . $thermometre->get_nom() . '</option>'; ?>
@@ -100,7 +100,7 @@ include_once("inc/header.php");
 
             <div class="part">
                 <h2><u>Nettoyage</u></h2>
-                <select class="picker" name="nettoyage" onblur=updateInfo()>
+                <select class="picker" name="nettoyage">
                     <option value="0">Aucun</option>
                     <?php foreach ($nettoyages as $nettoyage)
                             echo '<option value="' . $nettoyage->get_no() . '">' . $nettoyage->get_nom() . '</option>'; ?>
