@@ -1,6 +1,9 @@
 document.getElementById("menubutton").addEventListener(onclick, openNav)
 document.getElementById("closebutton").addEventListener(onclick, closeNav)
 
+function countPanier(){
+
+}
 /* Configuration carousel */
 /*let bouton_carousel = document.getElementsBy("bouton_carousel")
 for(let i = 0; i = bouton_carousel.length; i++){
