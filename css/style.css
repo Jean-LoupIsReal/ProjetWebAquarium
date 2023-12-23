@@ -159,10 +159,23 @@ footer{
 
 
 /*   CSS INDEX    */
+.index h1{
+    margin-top: 5%;
+}
+.index h1, .index h2{
+    width: 100%;
+    text-align: center;
+}
+.bouton_carousel{
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 5px 15px;
+    color: white;
+    font-size: 50px;
+}
 
 
-
-/*   CSS INSCRIPTIONS   */
+/*   CSS INSCRIPTIONS  &&  CSS CONNEXION   */
 .inscription{
     display:flex;
     flex-wrap: wrap;
@@ -181,10 +194,12 @@ footer{
     justify-content:center;
     background-color: rgba(173, 216, 230, 0.5);
     border-radius: 10px;
+    font-weight: bold;
 }
 .inscription input, .inscription select{
     border-width: 0%;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .inscription label{
@@ -195,11 +210,16 @@ footer{
 .inscription button{
     margin: 20px;
     padding: 10px;
+    font-weight: bold;
 }
 
 
-/*   CSS CONNEXION   */
-
+/* CSS TRAITEEMT */
+.traitement h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
 
 
 /*   CSS INVENTAIRE   */
@@ -208,7 +228,11 @@ footer{
     flex-wrap: wrap;
     justify-content: center;
 }
-
+.inventaire h1{
+    width: 100%;
+    margin: 100px 0px 50px;
+    text-align: center;
+}
 .inventaire > a, .inventaire > div{
     width: 25%;
     margin: 2%;
@@ -477,6 +501,12 @@ footer{
         padding-left:50%;
         width:75px;
         height:75px;
+    }
+    .index .slide{
+        width: 80%;
+    }
+    .index img{
+        width: 80%;
     }
 
     .panier-paiement

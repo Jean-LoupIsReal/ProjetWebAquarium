@@ -17,12 +17,12 @@ include_once("traitement.php");
 
     <header class="menu">
         <nav class="upper-nav">
-            <?php if(isset($_SESSION['client'])){ ?>
-            <div class="textcontain"><p><a href="connexion.php?action=logout">Se déconnecter<a></p></div>
+            <?php if(isset($_SESSION['utilisateur'])){ ?>
+            <div class="textcontain"><p><a href="index.php?logout=logout">Se déconnecter<a></p></div>
             <?php } else { ?>
             <div class="textcontain"><p><a href="connexion.php">Se connecter<a></p></div>
-            <?php } ?>
             <div class="textcontain"><p><a href="inscription.php">S'inscrire<a></p></div>
+            <?php } ?>
         </nav>
         <nav class="nav-menu">
             <div class="logo-titre">
