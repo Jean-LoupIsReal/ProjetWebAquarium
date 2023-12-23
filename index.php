@@ -18,6 +18,10 @@
                 <h3>Panier</h3>
                 <img src="./img/panier.jpg" alt="panier"class="">
             </a>
+            <a href="inventaire.php" class="slideI col-3 col-10m">
+                <h3>Inventaire</h3>
+                <img src="./img/inventaire.jpg" alt="panier"class="">
+            </a>
             <?php
             $categories = ["Poisson", "Aquarium", "Chauffe-eau", "Substrait", "Décoration", "Filtre", "Lumière", "Thermomètre", "Nettoyage" ];
             foreach($categories as $cat)

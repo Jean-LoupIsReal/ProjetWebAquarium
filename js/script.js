@@ -4,11 +4,18 @@ document.getElementById("closebutton").addEventListener(onclick, closeNav);
 /* Configuration carousel */
 /*let bouton_carousel = document.getElementsBy("bouton_carousel")
 for(let i = 0; i = bouton_carousel.length; i++){
-  bouton_carousel[i].addEventListener("click", function(){
+  bouton_carousel[i].addEventListener("click", change{
     let slides = document.getElementsBy("slideI")
     slides.forEach();
   })
 }*/
+
+for(let i = 0; i < boutonSuprimer.length; i++)
+{
+  boutonSuprimer[i].addEventListener("click", function(){
+    boutonSuprimer[i].classList
+  })
+}
 
 /* Set the width of the side navigation to 250px */
 function openNav() 
