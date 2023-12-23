@@ -9,34 +9,24 @@
     <!--************************************************************************* -->
     <section aria-label="selection">
         <div class="carousel">
-            <button onclick="carousel()" class="prev">&#11164;</button>
-            <a href="poissonPartPicker.php" class="slide col-3 col-11m">
-
+            <button class="bouton_carousel prev">&#11164;</button>
+            <a href="poissonPartPicker.php" class="slide">
+                <h3>Poisson part picker</h3>
+                <img src="./img/poissonpp.jpg" alt="poissonpp"class="">
             </a>
 
             <?php
             $categories = ["Poisson", "Aquarium", "Chauffe-eau", "Substrait", "Décoration", "Filtre", "Lumière", "Thermomètre", "Nettoyage" ];
             foreach($categories as $cat)
             {   
-                echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="slide col-3 col-11m">';
-
-                echo    '<img src="img/'. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '.jpg" alt="">';
-                echo    '<p>'. $cat .'</p>';
+                echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="slide">';
+                    echo    '<h3>'. $cat .'</h3>';
+                    echo    '<img src="img/'. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '.jpg" alt="">';
                 echo '</a>';
             }?>
             <button onclick="carousel()" class="next">&#11166;</button>
         </div>
         
     </section>
-
-    <section class="offres">
-        <div class="offre-inventaire">
-
-        </div>
-        <div class="offre-partpicker">
-
-        </div>
-    </section>
-</div>
 
 <?php include_once("inc/footer.php") ?>
