@@ -3,14 +3,14 @@
 class Utilisateur
 {
     private int $_no;
-    private string $_nom;
+    private string $_nom_utilisateur;
     private string $_mdp;
     private string $_email;
     private string $_addresse;
     private string $_ville;
     private string $_pays;
     private string $_code_panier;
-
+    
 
     public function __construct($param = array())
     {
@@ -22,7 +22,9 @@ class Utilisateur
             if(method_exists($this, $methodName))
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
+        
     }
+
     /**
      * Get the value of _no
      */ 
@@ -46,9 +48,9 @@ class Utilisateur
     /**
      * Get the value of _nom
      */ 
-    public function get_nom()
+    public function get_nom_utilisateur()
     {
-        return $this->_nom;
+        return $this->_nom_utilisateur;
     }
 
     /**
@@ -56,9 +58,9 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function set_nom($_nom)
+    public function set_nom_utilisateur($_nom)
     {
-        $this->_nom = $_nom;
+        $this->_nom_utilisateur = $_nom;
 
         return $this;
     }

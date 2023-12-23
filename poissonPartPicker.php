@@ -1,7 +1,5 @@
-<?php
-include_once("inc/header.php");
-?>
-
+<?php include_once("inc/pretraitement.php") ?>
+<!-- selectionne les éléments à acheter -->
 <article class="section-principale">
     <aside class="boutons-fonctions">
         <button>Vider</button>
@@ -11,33 +9,68 @@ include_once("inc/header.php");
     <section class="part-picker">
         <span class="picker">
             <div class="part">
-                <h2></h2>
+                <h2><u>Aquarium</u></h2>
                 <select>
 
                 </select>
+                <hr>
             </div>
-            <hr>
             <div class="part">
-                <h2></h2>
+                <h2><u>Filtre</u></h2>
                 <select>
 
                 </select>
+                <hr>
             </div>
-            <hr>
             <div class="part">
-                <h2></h2>
+                <h2><u></u></h2>
                 <select>
                     
                 </select>
+                <hr>
             </div>
-            <hr>
             <div class="part">
-                <h2></h2>
+                <h2><u></u></h2>
                 <select>
                     
                 </select>
+                <hr>
             </div>
-            <hr>
+            <div class="part">
+                <h2><u></u></h2>
+                <select>
+                    
+                </select>
+                <hr>
+            </div>
+            <div class="part">
+                <h2><u></u></h2>
+                <select>
+                    
+                </select>
+                <hr>
+            </div>
+            <div class="part">
+                <h2><u></u></h2>
+                <select>
+                    
+                </select>
+                <hr>
+            </div>
+            <div class="part">
+                <h2><u></u></h2>
+                <select>
+                    
+                </select>
+                <hr>
+            </div>
+            <div class="part">
+                <h2><u></u></h2>
+                <select>
+                    
+                </select>
+                <hr>
+            </div>
         </span>
         <span class="prix-paiement">
             <button onclick=ajouterTous()>Aller au panier</button>

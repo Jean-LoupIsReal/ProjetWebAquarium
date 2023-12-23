@@ -3,13 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 } 
 
-include_once("autoloader.php");
-include_once("classe/PDOFactory.php");
-include_once("manager/item_manager.php");
-
-$bdd = PDOFactory::getMySQLConnection();
-
-$itemManager = new item_manager($bdd);
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +14,14 @@ $itemManager = new item_manager($bdd);
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Linefont:wght@200&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Linefont:wght@200&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
 </head>
 <body class="page">
 
     <header class="menu">
         <nav class="upper-nav">
-            <?php if(isset($_SESSION['client'])){ ?>
-            <div class="textcontain"><p><a href="connexion.php?action=logout">Se déconnecter<a></p></div>
+            <?php if(isset($_SESSION['utilisateur'])){ ?>
+            <div class="textcontain"><p><a href="index.php?logout=logout">Se déconnecter<a></p></div>
             <?php } else { ?>
             <div class="textcontain"><p><a href="connexion.php">Se connecter<a></p></div>
             <?php } ?>
