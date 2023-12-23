@@ -22,6 +22,8 @@ class Aquarium
         }
     }
 
+    //mode: "ajouter" = bouton ajoute au panier
+    //mode: "supprimer" = bouton supprime du panier
     public function affiche($mode)
     {
         echo "<div class='affichage'>";

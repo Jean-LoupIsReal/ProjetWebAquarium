@@ -3,11 +3,13 @@ include_once("inc/header.php");
 ?>
 
 <article class="section-principale">
+
     <aside class="boutons-fonctions">
         <button>Vider</button>
         <button>Voir l'inventaire</button>
         <button>Passer au panier</button>
     </aside>
+
     <section class="part-picker">
         <form class="picker">
             <div class="part">
@@ -25,58 +27,47 @@ include_once("inc/header.php");
                 <hr>
             </div>
             <div class="part">
-                <h2><u></u></h2>
+                <h2><u>Chauffe-Eau</u></h2>
                 <select>
                     
                 </select>
                 <hr>
             </div>
             <div class="part">
-                <h2><u></u></h2>
+                <h2><u>Substrait</u></h2>
                 <select>
                     
                 </select>
                 <hr>
             </div>
             <div class="part">
-                <h2><u></u></h2>
+                <h2><u>Décoration</u></h2>
                 <select>
                     
                 </select>
                 <hr>
             </div>
             <div class="part">
-                <h2><u></u></h2>
+                <h2><u>Lumière</u></h2>
                 <select>
                     
                 </select>
                 <hr>
             </div>
             <div class="part">
-                <h2><u></u></h2>
+                <h2><u>Thermomètre</u></h2>
                 <select>
                     
                 </select>
                 <hr>
             </div>
             <div class="part">
-                <label><u></u></label>
+                <h2><u>Nettoyage</u></h2>
                 <select>
                     
                 </select>
-                <hr>
-            </div>
-            <div class="part">
-                <h2><u></u></h2>
-                <select>
-                    
-                </select>
-                <hr>
             </div>
         </form>
-        <span class="prix-paiement">
-            <button onclick=submitPick()>Aller au panier</button>
-        </span>
     </section>
 </article>
 

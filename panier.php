@@ -1,6 +1,5 @@
 <?php
 include_once("inc/header.php");
-include_once("manager/item_manager.php")
 ?>
 
 <h1 class="titre-panier"><u>Votre Panier</u></h1>

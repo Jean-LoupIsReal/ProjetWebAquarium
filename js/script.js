@@ -77,9 +77,9 @@ function viderPanier()
   location.reload();
 }
 
-function supprimerObjet(event)
+function afficherChoix(id)
 {
-  event.target.value;
+  
 }
 
 function setCookie(cname, cvalue, exdays) {
