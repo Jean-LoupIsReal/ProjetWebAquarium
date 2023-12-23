@@ -1,5 +1,5 @@
 <!-- inscription d'un compte -->
-<?php include_once("inc/header.php") ?>
+<?php include_once("inc/pretraitement.php") ?>
 <div class="inscription">
     <h1>Création de votre compte</h1>
 

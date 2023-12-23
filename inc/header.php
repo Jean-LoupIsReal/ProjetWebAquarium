@@ -19,8 +19,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <header class="menu">
         <nav class="upper-nav">
-            <?php if(isset($_SESSION['client'])){ ?>
-            <div class="textcontain"><p><a href="connexion.php?action=logout">Se déconnecter<a></p></div>
+            <?php if(isset($_SESSION['utilisateur'])){ ?>
             <?php } else { ?>
             <div class="textcontain"><p><a href="connexion.php">Se connecter<a></p></div>
             <?php } ?>

@@ -8,16 +8,16 @@ class utilisateur_manager
     const INSERT_UTILISATEUR = "INSERT INTO utilisateur (nom_utilisateur, mdp, email, adresse, ville, no_pays, code_panier) 
                                 VALUES(:nom_utilisateur, :mdp, :email, :adresse, :ville, :no_pays, :code_panier)";
     
-    const CONNEXION_UTILISATEUR = "SELECT `no`  FROM utilisateur
+    const CONNEXION_UTILISATEUR = "SELECT utilisateur.`no`  FROM utilisateur
                                     INNER JOIN pays ON utilisateur.no_pays = pays.no 
                                     WHERE nom_utilisateur = :nom_utilisateur AND mdp = :mdp";
 
-    const UTILISATEUR_EXISTE = "SELECT `no` FROM utilisateur WHERE nom_utilisateur LIKE CONCAT('%', :nom_utilisateur, '%')";
+    const SELECT_NO_BY_NOM = "SELECT `no` FROM utilisateur WHERE nom_utilisateur LIKE CONCAT('%', :nom_utilisateur, '%')";
     
-    const SELECT_UTILISATEUR = "SELECT `no`  
+    const SELECT_UTILISATEUR = "SELECT utilisateur.nom_utilisateur, utilisateur.email, utilisateur.adresse, utilisateur.ville, utilisateur.code_panier, pays.pays  
                                     FROM utilisateur
                                     INNER JOIN pays ON utilisateur.no_pays = pays.no 
-                                    WHERE `no` = :id";
+                                    WHERE utilisateur.`no` = :id";
 
     public function __construct($db) { $this->set_db($db); }
 
@@ -49,12 +49,16 @@ class utilisateur_manager
     }
 
     public function getUtilisateur($nom_utilisateur, $mdp) : Utilisateur{
-        //demande l'id
-        $query = $this->_db->prepare(self::CONNECTION_UTILISATEUR);
+        //Regarde si il y a des entrées avec le nom et mdp entré
+        $query = $this->_db->prepare(self::CONNEXION_UTILISATEUR);
         assert($query->execute(array("nom_utilisateur" => $nom_utilisateur, "mdp" => $mdp)));
         //regarde si l'id est inséré 
         if($id = $query->fetch()){
-            return $id;
+            //prend les infos de l'utilisateur
+            $query = $this->_db->prepare(self::SELECT_UTILISATEUR);
+            assert($query->execute(array("id" => strval($id[0]))));
+            $ut = $query->fetch();
+            return new Utilisateur($ut);
         }
         else{
             //est null
@@ -64,7 +68,7 @@ class utilisateur_manager
 
     public function utilisateurExiste($nom_utilisateur) : bool{
         //demande l'id
-        $query = $this->_db->prepare(self::UTILISATEUR_EXISTE);
+        $query = $this->_db->prepare(self::SELECT_NO_BY_NOM);
         assert($query->execute(array("nom_utilisateur" => $nom_utilisateur)));
         //regarde si l'id est inséré 
         if($query->fetch()){

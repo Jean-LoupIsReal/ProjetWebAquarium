@@ -1,32 +1,21 @@
-<?php include_once("inc/pretraitement.php")
-
+<?php include_once("inc/pretraitement.php");
+    echo "<div class='traitement'>";
     if(isset($_REQUEST["insc"]))
     {
-        echo "<h2>insc</h2>";
+        echo "<h1>insc</h1>";
         if($utilisateur_manager->utilisateurExiste($_REQUEST["nom"]))
         {
-            echo "<h2>Cher ". $_REQUEST["nom"] . " vous avez deja un compte chez nous</h2>";
+            echo "<h1>Cher ". $_REQUEST["nom"] . " vous avez deja un compte chez nous</h1>";
         }
         else{
-            echo "<h2>Bienvenue ". $_REQUEST["nom"] . "</h2>";
+            echo "<h1>Bienvenue ". $_REQUEST["nom"] . "</h1>";
             $utilisateur_manager->ajouteUtilisateur($_REQUEST["nom"], $_REQUEST["mdp"], $_REQUEST["email"], $_REQUEST["adresse"], $_REQUEST["ville"], $_REQUEST["pays"], "nouv");
         }
     }
-    else if(isset($_REQUEST["con"]))
+    else if(isset($_REQUEST["con"]) && isset($_SESSION["utilisateur"]))
     {
-        echo "<h2>connexion</h2>";
-        
-        if($utilisateur_manager->utilisateurExiste($_REQUEST["nom"]))
-        {
-            $utilisateur = $utilisateur_manager->getUtilisateur($_REQUEST["nom"])
-            if($no_utilisateur != null)
-            {
-
-            }
-
-            echo "<h2>Bienvenue ". $utilisateur->get_nom(). "</h2>";
-        }
+        echo "<h1>Bienvenue ". $utilisateur->get_nom_utilisateur(). "</h1>";
     }
-
+    echo "</div>";
 include_once("inc/footer.php");
 ?>

@@ -1,4 +1,5 @@
 <!-- selectionne les éléments à acheter -->
+<?php include_once("inc/pretraitement.php") ?>
 <article class="section-principale">
     <aside class="boutons-fonctions">
 
