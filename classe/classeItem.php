@@ -21,8 +21,8 @@ class Item
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-    public function affiche(){
-        echo "<div>";
+    public function affiche($mode){
+        echo "<div class='affichage'>";
             echo "<img src='img/items/". str_replace('é', 'e', str_replace('è', 'e', strtolower($this->get_type()))) ."/". str_replace('é', 'e', str_replace('è', 'e', strtolower($this->get_type()))) .".jpg' alt='". $this->get_type() ."'></img>"; //si temps ajouter img précise avec $poisson->get_img()
             echo "<p>". $this->get_type() . " " . $this->get_compagnie() . " " . $this->get_nom(). "</p><p>". $this->get_prix(). "$". "</p>";
             if($mode == "ajouter")

@@ -21,6 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <header class="menu">
         <nav class="upper-nav">
             <?php if(isset($_SESSION['utilisateur'])){ ?>
+            <div class="textcontain"><p><a href="index.php?logout=logout">Se déconnecter<a></p></div>
             <?php } else { ?>
             <div class="textcontain"><p><a href="connexion.php">Se connecter<a></p></div>
             <?php } ?>
