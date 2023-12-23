@@ -36,7 +36,7 @@
 
             }
 
-            echo "<h2>Bienvenue ". $utilisateur->get_nom(). "</h2>";
+            echo "<h2>Bienvenue ". $utilisateur->get_nom_utilisateur(). "</h2>";
         }
     }
     echo "</div>";

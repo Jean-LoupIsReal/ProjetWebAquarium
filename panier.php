@@ -12,6 +12,7 @@ include_once("inc/header.php");
             $sousTotal = 0;
             $livraison = 0;
 
+            //premier loop pour créer des objets Aquarium par la BD
             if(isset($_COOKIE["panierAquarium"]))
             {
                 $aquariums = json_decode($_COOKIE["panierAquarium"], true);
@@ -24,6 +25,8 @@ include_once("inc/header.php");
                     $tempAquarium->affiche("supprimer");
                 }
             }
+
+            //deuxième loop pour les objets items
             if(isset($_COOKIE["panierItem"]))
             {
                 $items = json_decode($_COOKIE["panierItem"], true);
@@ -36,6 +39,8 @@ include_once("inc/header.php");
                     $tempItem->affiche("supprimer");
                 }
             }
+
+            //dernier loop pour les poissons
             if(isset($_COOKIE["panierPoisson"]))
             {
                 $poissons = json_decode($_COOKIE["panierPoisson"], true);
@@ -49,6 +54,7 @@ include_once("inc/header.php");
                 }  
             }
 
+            //si un objet est dans le panier, obtenir un coût de livraison
             if($sousTotal != 0)
             {
                 $livraison = rand(2, 15);
@@ -76,6 +82,7 @@ include_once("inc/header.php");
             </span>
             <hr>
             <h1>Total: <?php echo $sousTotal; ?>$</h1>
+            <!-- retourne à la page principale en vidant le panier !-->
             <button><a href="index.php?action=paid">Payer</a></button>
          </div>
     </aside>
