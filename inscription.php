@@ -1,5 +1,7 @@
 <!-- inscription d'un compte -->
-<?php include_once("inc/pretraitement.php") ?>
+<?php include_once("inc/pretraitement.php"); 
+$utilisateur_manager = new utilisateur_manager($bdd);?>
+
 <div class="inscription">
     <h1>Création de votre compte</h1>
 
