@@ -18,6 +18,9 @@
         echo "<h1>Bienvenue ". $utilisateur->get_nom_utilisateur(). "</h1>";
         //$_SESSION["panier"] = serialize();
     }
+    else{
+        echo "<h1>Mauvais nom d'utilisateur ou mot de passe!</h1>";
+    }
     echo "</div>";
 include_once("inc/footer.php");
 ?>

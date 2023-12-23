@@ -120,6 +120,9 @@ footer{
 
 
 /*   CSS INDEX    */
+a.slideI.hide{
+    display: none;
+}
 .index h1{
     margin-top: 5%;
 }
@@ -127,13 +130,55 @@ footer{
     width: 100%;
     text-align: center;
 }
+
+.carousel{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .bouton_carousel{
     background-color: rgba(0, 0, 0, 0.3);
     border: none;
-    padding: 5px 15px;
-    color: white;
+    width: 70px;
+    height: 70px;
+    color: rgba(255, 255, 255, 0.5);
     font-size: 50px;
 }
+
+.bouton_carousel:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+.index h3{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+.index .slideI{
+    max-width: 50%;
+    text-decoration: none;
+    background-color: rgba(173, 216, 230, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    text-decoration: none;
+    background-color: rgba(173, 216, 230, 0.5);
+    border-radius: 10px;
+    font-weight: bold;
+    color: black;
+    inset:0;
+    max-height: 70%;
+}
+.index img{
+    max-width: 80%;
+    max-height: 60%;
+    margin-bottom: 10%;
+}
+
 
 
 /*   CSS INSCRIPTIONS  &&  CSS CONNEXION   */
@@ -153,6 +198,7 @@ footer{
     flex-wrap: wrap;
     width: 50%;
     justify-content:center;
+    text-decoration: none;
     background-color: rgba(173, 216, 230, 0.5);
     border-radius: 10px;
     font-weight: bold;
@@ -428,7 +474,7 @@ footer{
         width:75px;
         height:75px;
     }
-    .index .slide{
+    .index .slideI{
         width: 80%;
     }
     .index img{
@@ -454,17 +500,4 @@ footer{
     {
         width:60%;
     }
-
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 

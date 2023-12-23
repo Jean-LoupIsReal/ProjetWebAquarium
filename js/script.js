@@ -1,7 +1,8 @@
 document.getElementById("menubutton").addEventListener(onclick, openNav)
 document.getElementById("closebutton").addEventListener(onclick, closeNav)
 
-
+/* Configuration carousel */
+let bouton_carousel = document.getElementsBy(bouton_carousel)
 
 /* Set the width of the side navigation to 250px */
 function openNav() 
