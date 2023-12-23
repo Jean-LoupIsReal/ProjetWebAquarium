@@ -24,8 +24,8 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="textcontain"><p><a href="index.php?logout=logout">Se déconnecter<a></p></div>
             <?php } else { ?>
             <div class="textcontain"><p><a href="connexion.php">Se connecter<a></p></div>
-            <?php } ?>
             <div class="textcontain"><p><a href="inscription.php">S'inscrire<a></p></div>
+            <?php } ?>
         </nav>
         <nav class="nav-menu">
             <div class="logo-titre">

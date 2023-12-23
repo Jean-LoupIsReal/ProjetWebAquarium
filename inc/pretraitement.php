@@ -23,7 +23,6 @@ else if(isset($_REQUEST["logout"]))
 {
     session_destroy(); 
 }
-$utilisateur_manager = new utilisateur_manager($bdd);
 
 
 include_once("inc/header.php");

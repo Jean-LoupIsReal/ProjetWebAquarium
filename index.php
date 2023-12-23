@@ -1,35 +1,42 @@
-<?php include_once("inc/header.php") ?>
+<?php include_once("inc/pretraitement.php") ?>
 <!-- page d'accueil -->
+<div class='index'>
+    <h1>Bienvenu sur notre site!</h1>
 
-<section class="selection">
-    <h1>Nos recommendations</h1>
-    <span>
-        <div>
-            <img>
-            <p></p>
-        </div>
-        <div>
-            <img>
-            <p></p>
-        </div>
-        <div>
-            <img>
-            <p></p>
-        </div>
-        <div>
-            <img>
-            <p></p>
-        </div>
-    </span>
-</section>
+    <h2>Sections du site</h2>
+    <!--************************************************************************* -->
+    <!--*************** CHAMGEMENT DE PLANS, FAIT PAR JEAN-LOUP ***************** -->
+    <!--************************************************************************* -->
+    <section aria-label="selection">
+        <div class="carousel">
+            <button onclick="carousel()" class="prev">&#11164;</button>
+            <a href="poissonPartPicker.php" class="slide col-3 col-11m">
 
-<section class="offres">
-    <div class="offre-inventaire">
+            </a>
 
-    </div>
-    <div class="offre-partpicker">
+            <?php
+            $categories = ["Poisson", "Aquarium", "Chauffe-eau", "Substrait", "Décoration", "Filtre", "Lumière", "Thermomètre", "Nettoyage" ];
+            foreach($categories as $cat)
+            {   
+                echo '<a href="./inventaire.php?categorie='. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '" class="slide col-3 col-11m">';
 
-    </div>
-</section>
+                echo    '<img src="img/'. str_replace('é', 'e', str_replace('è', 'e', strtolower($cat))). '.jpg" alt="">';
+                echo    '<p>'. $cat .'</p>';
+                echo '</a>';
+            }?>
+            <button onclick="carousel()" class="next">&#11166;</button>
+        </div>
+        
+    </section>
+
+    <section class="offres">
+        <div class="offre-inventaire">
+
+        </div>
+        <div class="offre-partpicker">
+
+        </div>
+    </section>
+</div>
 
 <?php include_once("inc/footer.php") ?>
