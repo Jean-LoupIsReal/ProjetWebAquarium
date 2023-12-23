@@ -10,14 +10,15 @@ class item_manager
     const SELECT_ALL_POISSONS = "SELECT * FROM `poisson`";
 
 
+    
     const SELECT_ALL_AQUARIUMS = "SELECT aquarium.*,  type_aquarium.`type` FROM aquarium 
-                                    INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
+                                  INNER JOIN type_aquarium ON aquarium.no_type_aquarium = type_aquarium.no" ;
 
     const SELECT_ALL_ITEMS = "SELECT item_autre.*,  compagnie.compagnie, type_item.type  FROM item_autre 
-                              INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
-                              INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
-                              WHERE no_type_item = 
-                              (SELECT item_autre.no FROM type_item WHERE :type_item LIKE type_item.type)";
+                                INNER JOIN compagnie ON item_autre.no_compagnie = compagnie.no 
+                                INNER JOIN type_item ON item_autre.no_type_item = type_item.no 
+                                WHERE no_type_item = 
+                                (SELECT `no` FROM type_item WHERE :type_item LIKE type_item.type)";
     
     const SELECT_POISSON_BY_ID = "SELECT * FROM `poisson` where poisson.no = :_no";
 
