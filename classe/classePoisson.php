@@ -30,11 +30,6 @@ class Poisson{
             {
                 echo "<button onclick='ajouterPoisson(". $this->get_no() .")'class='" . $this->get_no(). "'>Ajouter au panier</button>";
             }
-            elseif($mode == "supprimer")
-            {
-                echo "<button class='supp'>Supprimer</button>";
-            }
-
       
         echo "</div>";
     }

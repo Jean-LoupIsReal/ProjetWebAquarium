@@ -1,15 +1,6 @@
 document.getElementById("menubutton").addEventListener("click", openNav);
 document.getElementById("closebutton").addEventListener("click", closeNav);
 
-let selectors = document.getElementsByClassName("picker");
-for (let i = 0; i <= selectors.length; i++) {
-  selectors[i].addEventListener("blur", updateInfo(e));
-}
-
-let suppressors = document.getElementsByClassName("supp");
-for (let i = 0; i <= suppressors.length; i++) {
-  suppressors[i].addEventListener("click", deleteEntry(e));
-}
 
 
 //fait apparaitre le side menu
@@ -93,15 +84,6 @@ function transferPick()
       ajouterItem(element.value);
     }
   });
-}
-
-//mets à jours les infos d'un objet sélectionné dans un partpicker
-//ne fonctionne pas car event reste undefined
-//je ne sais pas pourquoi
-function updateInfo(e)
-{
-  let thing = e.target;
-  console.log(thing)
 }
 
 //détruit un cookie
