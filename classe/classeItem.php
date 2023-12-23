@@ -21,17 +21,24 @@ class Item
                 $this->$methodName($v); // Insère la valeur dans la méthode
         }
     }
-
     public function affiche(){
         echo "<div>";
             echo "<img src='img/items/". str_replace('é', 'e', str_replace('è', 'e', strtolower($this->get_type()))) ."/". str_replace('é', 'e', str_replace('è', 'e', strtolower($this->get_type()))) .".jpg' alt='". $this->get_type() ."'></img>"; //si temps ajouter img précise avec $poisson->get_img()
             echo "<p>". $this->get_type() . " " . $this->get_compagnie() . " " . $this->get_nom(). "</p><p>". $this->get_prix(). "$". "</p>";
-            echo "<button onclick='ajouterItemPanier()'class='" . $this->get_no(). " ". $this->get_type() ."'>Ajouter au panier</button>";
+            if($mode == "ajouter")
+            {
+                echo "<button onclick='ajouterItem(". $this->get_no() .")'class='" . $this->get_no(). "'>Ajouter au panier</button>";
+            }
+            elseif($mode == "supprimer")
+            {
+                echo "<button onclick='supprimerEntrée()'>Supprimer</button>";
+            }
         echo "</div>";
     }
-    
+  
+  
     /**
-     * Get the value of _id
+     * Get the value of _no
      */ 
     public function get_no()
     {
@@ -39,13 +46,13 @@ class Item
     }
 
     /**
-     * Set the value of _id
+     * Set the value of _no
      *
      * @return  self
      */ 
-    public function set_no($_id)
+    public function set_no($_no)
     {
-        $this->_no = $_id;
+        $this->_no = $_no;
 
         return $this;
     }
@@ -115,7 +122,7 @@ class Item
      */ 
     public function get_no_range_gallons()
     {
-        return $this->_range_gallons;
+        return $this->_no_range_gallons;
     }
 
     /**
@@ -123,9 +130,9 @@ class Item
      *
      * @return  self
      */ 
-    public function set_no_range_gallons($range_gallon)
+    public function set_nono_range_gallons($range_gallon)
     {
-        $this->_range_gallons = $range_gallon;
+        $this->_no_range_gallons = $range_gallon;
 
         return $this;
     }

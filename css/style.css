@@ -3,6 +3,7 @@
     --bleupale: #00A1FF;
     --bleumarin: #010925;
     --grisfonce: #1b1b1b;
+    --bleutrespale: #9de0ff;
 }
 
 body{
@@ -215,11 +216,105 @@ footer{
 
 /*   CSS POISSONPARTPICKER   */
 
+.part-picker
+{
+    background-color: var(--bleupale);
+}
 
+.part
+{
+    background-color: var(--bleutrespale);
+}
 
 /*   CSS PANIER   */
 
+.titre-panier
+{
+    margin-left: 20px;
+}
 
+.panier-paiement
+{
+    display:flex;
+    flex-direction: row;
+    overflow:hidden;
+    gap: 5%;
+    height:auto;
+    padding: 20px;
+}
+
+.liste-panier
+{
+    width: 70%;
+    height:600px;
+    overflow:scroll;
+    background-color: var(--bleumarin);
+}
+
+.paiement
+{
+    width:20%;
+    height: 350px;
+    background-color: var(--bleupale);
+    border: dashed 3px var(--bleumarin);
+}
+
+.paiement h1
+{
+    text-align: center;
+}
+
+.paiement button
+{
+    margin-left:30%;
+    color: white;
+    background-color: var(--bleumarin);
+    width: 35%;
+    height:35px;
+    border-radius: 5px;
+}
+
+.paiement hr
+{
+    border-color: var(--grisfonce);
+}
+
+.paiement-cout
+{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.paiement-cout div
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.liste-panier .affichage
+{
+    display:flex;
+    flex-direction: row;
+    width:98%;
+    height:140px;
+    margin: 5px auto 5px auto;
+    border-radius: 10px;
+    background-color:var(--bleupale);
+    opacity:80%;
+}
+
+.liste-panier .affichage img
+{
+    width:125px;
+    height: 125px;
+}
+
+.liste-panier .affichage button
+{
+    height: 30px;
+}
 
 /*   CSS RESPONSIVE   */
     
@@ -242,6 +337,16 @@ footer{
 {
     .logo-titre h1{
         display:none;
+    }
+
+    .panier-paiement
+    {
+        gap:0;
+    }
+
+    .paiement
+    {
+        width:30%;
     }
 }
 
@@ -299,4 +404,38 @@ footer{
         width:75px;
         height:75px;
     }
+
 }
+
+
+    .panier-paiement
+    {
+        flex-direction:column;
+        align-items: center;
+    }
+
+    .panier
+    {
+        width: 80%;
+        background-color: var(--bleumarin);
+    }
+
+    .paiement
+    {
+        width:60%;
+    }
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
