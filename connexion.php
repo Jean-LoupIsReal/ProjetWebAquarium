@@ -1,5 +1,5 @@
 <!-- connexion au compte -->
-<?php include_once("inc/pretraitement.php") ?>
+<?php include_once("inc/header.php") ?>
 <div class="inscription">
     <h1>Connexion</h1>
 

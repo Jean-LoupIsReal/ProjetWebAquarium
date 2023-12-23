@@ -96,7 +96,7 @@ header
     padding-right:2%;
     grid-area:menu;
 }
-.page-menu img{
+img.panier{
     width:50px;
     height:50px;
 }
@@ -105,6 +105,45 @@ header
 {
     display:none;
 }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: var(--bleumarin);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
 
 /*   CSS FOOTER   */
 
@@ -240,9 +279,24 @@ footer{
 
 /*   CSS POISSONPARTPICKER   */
 
+.section-principale
+{
+    display:flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 2% auto auto auto;
+}
+
+.boutons-fonctions
+{
+    float:left;
+}
+
 .part-picker
 {
+    margin-top:2%;
     background-color: var(--bleupale);
+
 }
 
 .part
@@ -255,6 +309,15 @@ footer{
 .titre-panier
 {
     margin-left: 20px;
+}
+
+.empty
+{
+    margin-left:20px;
+    background-color: red;
+    border: none;
+    border-radius:5px;
+    height:40px;
 }
 
 .panier-paiement
@@ -279,6 +342,8 @@ footer{
 {
     width:20%;
     height: 350px;
+    padding-left:1%;
+    padding-right:1%;
     background-color: var(--bleupale);
     border: dashed 3px var(--bleumarin);
 }
@@ -291,11 +356,17 @@ footer{
 .paiement button
 {
     margin-left:30%;
-    color: white;
     background-color: var(--bleumarin);
     width: 35%;
     height:35px;
     border-radius: 5px;
+    border:none;
+}
+
+.paiement button a
+{
+    text-decoration: none;
+    color: white;
 }
 
 .paiement hr
@@ -321,9 +392,12 @@ footer{
 {
     display:flex;
     flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
     width:98%;
     height:140px;
     margin: 5px auto 5px auto;
+    padding:8px;
     border-radius: 10px;
     background-color:var(--bleupale);
     opacity:80%;
@@ -435,9 +509,6 @@ footer{
         width: 80%;
     }
 
-}
-
-
     .panier-paiement
     {
         flex-direction:column;
@@ -455,16 +526,5 @@ footer{
         width:60%;
     }
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+}
 

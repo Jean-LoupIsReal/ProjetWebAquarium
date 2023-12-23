@@ -1,6 +1,5 @@
-document.getElementById("menubutton").addEventListener(onclick, openNav)
-document.getElementById("closebutton").addEventListener(onclick, closeNav)
-
+document.getElementById("menubutton").addEventListener(onclick, openNav);
+document.getElementById("closebutton").addEventListener(onclick, closeNav);
 
 
 /* Set the width of the side navigation to 250px */
@@ -13,6 +12,74 @@ function openNav()
 function closeNav() 
 {
     document.getElementById("mySidenav").style.width = "0";
+}
+
+function ajouterAquarium(objectID)
+{
+  let panierArray = new Array;
+
+  if(getCookie("panierAquarium") != "")
+  {
+    let panierCookie = getCookie("panierAquarium");
+    panierArray = JSON.parse(panierCookie);
+  }
+
+  console.log("avant: " + panierArray);
+  panierArray.push(objectID);
+  console.log("après: " + panierArray);
+  setCookie("panierAquarium", JSON.stringify(panierArray));
+
+}
+
+function ajouterPoisson(objectID)
+{
+  let panierArray = new Array;
+
+  if(getCookie("panierPoisson") != "")
+  {
+    let panierCookie = getCookie("panierPoisson");
+    panierArray = JSON.parse(panierCookie);
+  }
+
+  panierArray.push(objectID);
+  console.log("après: " + panierArray);
+  setCookie("panierPoisson", JSON.stringify(panierArray));
+
+}
+
+function ajouterItem(objectID)
+{
+  let panierArray = new Array;
+
+  if(getCookie("panierItem") != "")
+  {
+    let panierCookie = getCookie("panierItem");
+    panierArray = JSON.parse(panierCookie);
+  }
+
+  console.log("avant: " + panierArray);
+  panierArray.push(objectID);
+  console.log("après: " + panierArray);
+  setCookie("panierItem", JSON.stringify(panierArray));
+
+}
+
+function deleteCookie(cname)
+{
+  setCookie(cname, 0, 0);
+}
+
+function viderPanier()
+{
+  deleteCookie("panierAquarium");
+  deleteCookie("panierItem");
+  deleteCookie("panierPoisson");
+  location.reload();
+}
+
+function afficherChoix(id)
+{
+  
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -36,55 +103,4 @@ function getCookie(cname) {
     }
   }
   return "";
-}
-
-function ajouterAquarium(value)
-{
-  let panierArray = new Array;
-
-  if(getCookie("panierAquarium") != "")
-  {
-    let panierCookie = getCookie("panierAquarium");
-    panierArray = JSON.parse(panierCookie);
-  }
-
-  console.log("avant: " + panierArray);
-  panierArray.push(value);
-  console.log("après: " + panierArray);
-  setCookie("panierAquarium", JSON.stringify(panierArray));
-
-}
-
-function ajouterPoisson()
-{
-  let panierArray = new Array;
-
-  if(getCookie("panierPoisson") != "")
-  {
-    let panierCookie = getCookie("panierPoisson");
-    panierArray = JSON.parse(panierCookie);
-  }
-
-  console.log("avant: " + panierArray);
-  panierArray.push(value);
-  console.log("après: " + panierArray);
-  setCookie("panierPoisson", JSON.stringify(panierArray));
-
-}
-
-function ajouterItem()
-{
-  let panierArray = new Array;
-
-  if(getCookie("panierItem") != "")
-  {
-    let panierCookie = getCookie("panierItem");
-    panierArray = JSON.parse(panierCookie);
-  }
-
-  console.log("avant: " + panierArray);
-  panierArray.push(value);
-  console.log("après: " + panierArray);
-  setCookie("panierItem", JSON.stringify(panierArray));
-
 }

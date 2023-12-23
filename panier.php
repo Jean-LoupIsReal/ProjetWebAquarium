@@ -1,40 +1,59 @@
 <?php
 include_once("inc/header.php");
-include_once("manager/item_manager.php")
 ?>
 
 <h1 class="titre-panier"><u>Votre Panier</u></h1>
+<button onclick=viderPanier() class="empty">Vider le panier</button>
+
 <article class="panier-paiement"> 
     <section class="liste-panier">
         <?php
-            // $contenu = $_COOKIE["panierAquarium"];
-            $contenu = json_decode($_COOKIE[$panier], true);
+
             $sousTotal = 0;
+            $livraison = 0;
 
-            foreach($contenu as $id)
+            if(isset($_COOKIE["panierAquarium"]))
             {
-                $tempAquarium = $itemManager->getAquariumByID($id);
-                $sousTotal += $tempAquarium->get_prix();
+                $aquariums = json_decode($_COOKIE["panierAquarium"], true);
 
-                $tempAquarium->affiche("supprimer");
+                foreach($aquariums as $id)
+                {
+                    $tempAquarium = $itemManager->getAquariumByID($id);
+                    $sousTotal += $tempAquarium->get_prix();
 
-            
+                    $tempAquarium->affiche("supprimer");
+                }
             }
-            $contenu = $_COOKIE["panierItem"];
-
-            foreach($contenu as $id)
+            if(isset($_COOKIE["panierItem"]))
             {
-                $tempItem = $itemManager->getItemByID($id);
-                $sousTotal += $objet->get_prix();
+                $items = json_decode($_COOKIE["panierItem"], true);
 
-                ?>
-                <div>
-                    <img src=<?php  ?> class="image-objet">
-                    <h2><?php  ?></h2>
-                    <p><?php  ?></p>
-                </div>
-            <?php }
-            $contenu = null;
+                foreach($items as $id)
+                {
+                    $tempItem = $itemManager->getItemByID($id);
+                    $sousTotal += $tempItem->get_prix();
+
+                    $tempItem->affiche("supprimer");
+                }
+            }
+            if(isset($_COOKIE["panierPoisson"]))
+            {
+                $poissons = json_decode($_COOKIE["panierPoisson"], true);
+
+                foreach($poissons as $id)
+                {
+                    $tempPoisson = $itemManager->getPoissonByID($id);
+                    $sousTotal += $tempPoisson->get_prix();
+
+                    $tempPoisson->affiche("supprimer");
+                }  
+            }
+
+            if($sousTotal != 0)
+            {
+                $livraison = rand(2, 15);
+            }
+
             ?>
     </section>
 
@@ -43,18 +62,21 @@ include_once("manager/item_manager.php")
             <h1>Paiement</h1>
             <span class="paiement-cout">
                 <div>
-                    <p>Sous-Total</p> <p><?php  ?></p>
+                    <p>Sous-Total</p> <p><?php echo $sousTotal."$" ?></p>
                 </div>
                 <div>
-                    <p>Coût de Livraison</p> <p><?php   ?></p>
+                    <p>Coût de Livraison</p> <p><?php echo $livraison."$"; 
+                    $sousTotal += $livraison;?></p>
                 </div>
                 <div>
-                    <p>Taxes</p> <p><<?php   ?>/p>
+                    <p>Taxes</p> <p><?php $taxes = round($sousTotal * 0.09975, 2);
+                    $sousTotal += $taxes;
+                    echo $taxes; ?>$</p>
                 </div>
             </span>
             <hr>
-            <h1>Total: <?php   ?>$</h1>
-            <button>Payer</button>
+            <h1>Total: <?php echo $sousTotal; ?>$</h1>
+            <button><a href="index.php?action=paid">Payer</a></button>
          </div>
     </aside>
 </article>

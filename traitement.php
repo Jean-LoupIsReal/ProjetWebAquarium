@@ -1,5 +1,14 @@
 <?php include_once("inc/pretraitement.php");
+
     echo "<div class='traitement'>";
+
+    if(isset($_REQUEST["action"]) && $_REQUEST["action"] == "paid")
+    {
+        echo '<script type="text/javascript">
+         viderPanier();
+         </script>';
+    }
+
     if(isset($_REQUEST["insc"]))
     {
         $utilisateur_manager = new utilisateur_manager($bdd);
@@ -17,7 +26,21 @@
         $utilisateur = unserialize($_SESSION["utilisateur"]);
         echo "<h1>Bienvenue ". $utilisateur->get_nom_utilisateur(). "</h1>";
         //$_SESSION["panier"] = serialize();
+        echo "<h2>connexion</h2>";
+        
+        if($utilisateur_manager->utilisateurExiste($_REQUEST["nom"]))
+        {
+            $utilisateur = $utilisateur_manager->getUtilisateur($_REQUEST["nom"], $_REQUEST["mdp"]);
+            if($no_utilisateur != null)
+            {
+
+            }
+
+            echo "<h2>Bienvenue ". $utilisateur->get_nom(). "</h2>";
+        }
     }
     echo "</div>";
 include_once("inc/footer.php");
+
+
 ?>

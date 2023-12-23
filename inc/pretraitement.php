@@ -1,4 +1,8 @@
-<?php session_start();
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} 
+
 include_once("inc/autoloader.php");
 include_once("classe/PDOFactory.php");
 include_once("manager/item_manager.php");

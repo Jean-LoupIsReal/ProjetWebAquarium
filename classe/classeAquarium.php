@@ -22,6 +22,8 @@ class Aquarium
         }
     }
 
+    //mode: "ajouter" = bouton ajoute au panier
+    //mode: "supprimer" = bouton supprime du panier
     public function affiche($mode)
     {
         echo "<div class='affichage'>";
@@ -33,7 +35,7 @@ class Aquarium
             }
             elseif($mode == "supprimer")
             {
-                echo "<button onclick='supprimerEntrée()'>Supprimer</button>";
+                echo "<button onclick='supprimerObjet()'>Supprimer</button>";
             }
       
         echo "</div>";

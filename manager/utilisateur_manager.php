@@ -36,7 +36,8 @@ class utilisateur_manager
         return $arrayPays;
     }
 
-    public function ajouteUtilisateur($nom_utilisateur, $mdp, $email, $adresse, $ville, $no_pays, $code_panier){
+    public function ajouteUtilisateur($nom_utilisateur, $mdp, $email, $adresse, $ville, $no_pays, $code_panier)
+    {
         $arrayUtilisateur = array("nom_utilisateur" => $nom_utilisateur, 
                                     "mdp" => $mdp, 
                                     "email" => $email, 
@@ -49,7 +50,9 @@ class utilisateur_manager
     }
 
     public function getUtilisateur($nom_utilisateur, $mdp) : Utilisateur{
-        //Regarde si il y a des entrées avec le nom et mdp entré
+      
+        //Regarde si il y a des entrées avec le nom et mdp entré 
+        //demande l'id
         $query = $this->_db->prepare(self::CONNEXION_UTILISATEUR);
         assert($query->execute(array("nom_utilisateur" => $nom_utilisateur, "mdp" => $mdp)));
         //regarde si l'id est inséré 
