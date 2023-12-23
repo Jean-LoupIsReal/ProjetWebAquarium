@@ -159,6 +159,7 @@ footer{
     color:white;
     background-color:var(--bleumarin);
     text-align:center;
+    z-index: 99;
 }
 
 
@@ -172,13 +173,54 @@ footer{
     width: 100%;
     text-align: center;
 }
+
+.carousel{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .bouton_carousel{
     background-color: rgba(0, 0, 0, 0.3);
     border: none;
-    padding: 5px 15px;
-    color: white;
+    width: 70px;
+    height: 70px;
+    color: rgba(255, 255, 255, 0.5);
     font-size: 50px;
 }
+
+.bouton_carousel:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+.index h3{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+.index .slideI{
+    text-decoration: none;
+    background-color: rgba(173, 216, 230, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    text-decoration: none;
+    background-color: rgba(173, 216, 230, 0.5);
+    border-radius: 10px;
+    font-weight: bold;
+    color: black;
+    inset:0;
+    max-height: 70%;
+    margin: 20px;
+}
+.index img{
+    width: 80%;
+    margin-bottom: 10%;
+}
+
 
 
 /*   CSS INSCRIPTIONS  &&  CSS CONNEXION   */
@@ -200,6 +242,7 @@ footer{
     flex-wrap: wrap;
     width: 50%;
     justify-content:center;
+    text-decoration: none;
     background-color: rgba(173, 216, 230, 0.5);
     border-radius: 10px;
     font-weight: bold;
@@ -225,7 +268,7 @@ footer{
 /* CSS TRAITEEMT */
 
 
-.traitement h1{
+.pageTraitement h1{
     width: 100%;
     text-align: center;
     margin-top: 5%;
@@ -544,7 +587,7 @@ footer{
         width:75px;
         height:75px;
     }
-    .index .slide{
+    .index .slideI{
         width: 80%;
     }
     .index img{
@@ -567,6 +610,4 @@ footer{
     {
         width:60%;
     }
-
 }
-

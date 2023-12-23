@@ -2,6 +2,14 @@ document.getElementById("menubutton").addEventListener("click", openNav);
 document.getElementById("closebutton").addEventListener("click", closeNav);
 
 
+/* Configuration carousel */
+/*let bouton_carousel = document.getElementsBy("bouton_carousel")
+for(let i = 0; i = bouton_carousel.length; i++){
+  bouton_carousel[i].addEventListener("click", function(){
+    let slides = document.getElementsBy("slideI")
+    slides.forEach();
+  })
+}*/
 
 //fait apparaitre le side menu
 function openNav() 
