@@ -221,6 +221,10 @@ footer{
     margin-bottom: 10%;
 }
 
+.paymessage
+{
+    margin:auto;
+}
 
 
 /*   CSS INSCRIPTIONS  &&  CSS CONNEXION   */
@@ -410,7 +414,7 @@ footer{
     display:flex;
     flex-direction: row;
     overflow:hidden;
-    gap: 5%;
+    gap: 7%;
     height:auto;
     padding: 20px;
 }
@@ -478,7 +482,7 @@ footer{
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-between;
+    gap:4%;
     width:98%;
     height:140px;
     margin: 5px auto 5px auto;

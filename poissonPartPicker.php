@@ -15,12 +15,12 @@ include_once("inc/header.php");
 <article class="section-principale">
 
     <aside class="boutons-fonctions">
-        <a href="inventaire.php"><button id="bouton-inventaire" action="panier.php">Voir l'inventaire</button></a>
-        <button id="bouton-panier" type="submit" form="partpicker" value="submit">Passer au panier</button>
+        <a href="inventaire.php"><button id="bouton-inventaire">Voir l'inventaire</button></a>
+        <button id="bouton-panier" type="submit" form="partpicker" value="submit" >Passer au panier</button>
     </aside>
 
     <section class="part-picker">
-        <form id="partpicker" name="partpicker" onsubmit=transferPick()>
+        <form id="partpicker" name="partpicker" onsubmit=transferPick() method=post action="panier.php">
 
             <div class="part">
                 <h2><u>Aquarium</u></h2>

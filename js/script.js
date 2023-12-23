@@ -80,17 +80,23 @@ function ajouterItem(objectID)
 function transferPick()
 {
   let form = document.forms["partpicker"];
+  let categories = ["filtre","deco","chauffe","lumiere","substrait","thermo","nettoyage"]
 
   if(form["aquarium"].value != 0)
   {
     ajouterAquarium(form["aquarium"].value);
-  } 
+  }
+
+  categories.forEach(entry => {
+
+    if(form[entry].value != 0)
+    {
+      ajouterItem(form[entry].value);
+    }
+
+  });
 
   form.slice(1).forEach(element => {
-    if(element.value != 0)
-    {
-      ajouterItem(element.value);
-    }
   });
 }
 
